@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Personal Website</title>
-  <link rel="stylesheet" href="styles/style_contact.css">
+
   <style>
     * {
       margin: 0;
@@ -169,33 +169,61 @@
     }
 
     /* Handles Section Styling */
-    .handles-logos {
+    .reach-text {
+      text-align: center;
+    }
+
+    .reach-text p {
+      font-size: max(4vw, 32px);
+      font-weight: bold;
+      color: #FFB6C1;
+      gap: max(2vh, 32px);
+    }
+
+    .icon-container {
       display: flex;
       justify-content: center;
-      gap: 3rem;
-      margin-top: 30px;
-      flex-wrap: wrap;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      align-items: center;
+      gap: max(5vw, 100px);
+      height: max(40vh, 20px);
     }
 
-    .handles-logos.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .icon-container a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s;
     }
 
-    .handles-logos img {
-      width: 140px;
-      height: auto;
-      border-radius: 16px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    .icon-container p {
+      color: white;
+      font-size: calc(16px + 4vw);
+      font-weight: bold;
     }
 
-    .handles-logos a:hover img {
-      transform: scale(1.15) rotate(2deg);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    .icon-container img {
+      max-height: 8vw;
+      max-height: calc(16px + 8vw);
+      transition: transform 0.3s;
+    }
+
+    .icon-container a:hover img {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 800px) {
+      .reach-text p {
+        color: #FFB6C1;
+        font-size: max(4vw, 32px);
+        text-align: center;
+      }
+
+      .icon-container {
+        flex-direction: column;
+        gap: 50px;
+      }
     }
   </style>
 </head>
@@ -216,7 +244,7 @@
     <h1>hi, i'm leane!</h1>
     <p>junior at Cornell, user-focused software developer, and horror movie fanatic</p>
     <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
-      ↓ Scroll Down
+      ↓
     </div>
   </header>
 
@@ -253,9 +281,9 @@
 
     function revealOnScroll() {
       const triggerBottom = window.innerHeight * 0.85;
-      const boxTop = handlesLogos.getBoundingClientRect().top;
+      const boxTop = handlesLogos?.getBoundingClientRect().top;
       if (boxTop < triggerBottom) {
-        handlesLogos.classList.add('visible');
+        handlesLogos?.classList.add('visible');
       }
     }
 

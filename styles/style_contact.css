@@ -103,6 +103,7 @@ header ul li a {
   }
 
   .reach-text p {
+    color: #FFB6C1;
     font-size: max(4vw, 32px);
     text-align: center;
   }

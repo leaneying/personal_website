@@ -1,4 +1,4 @@
-/* Base Styles */
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -12,20 +12,30 @@ body {
   color: #333;
 }
 
-/* Desktop Nav */
-.desktop-nav a {
+/* Desktop Nav (Simple Nav Bar) */
+nav {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #FFDDF4, #FFB6C1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
   color: #fff8dc;
-  /* Keep color before and after being clicked */
+  /* Default color */
   text-decoration: none;
   font-weight: normal;
-  /* Default weight for non-active */
-  position: relative;
   padding: 0.3rem 0;
   transition: all 0.3s ease;
   text-transform: lowercase;
 }
 
-.desktop-nav a::after {
+nav a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -33,191 +43,111 @@ body {
   height: 2px;
   width: 100%;
   background-color: #fff8dc;
+  /* Match the text color */
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
 }
 
-.desktop-nav a:hover {
+nav a:hover {
   transform: scale(1.05);
   color: #800059;
+  /* Change color on hover */
 }
 
-.desktop-nav a:hover::after {
+nav a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.desktop-nav a.active {
+nav a.active {
   color: #fff8dc;
+  /* Active color */
   font-weight: bold;
+  /* Bold on active link */
   border-bottom: 2px solid #800059;
+  /* Border to indicate active page */
 }
 
-
-/* Mobile Nav */
-.mobile-navbar {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(135deg, #FFDDF4, #FFB6C1);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1100;
-}
-
-.mobile-title {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: white;
-  text-transform: lowercase;
-}
-
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  height: 3px;
-  width: 25px;
-  background: white;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background: #ffd7eb;
-  padding: 1rem;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.mobile-menu a {
-  color: #333;
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #fff;
-  text-transform: lowercase;
-}
-
-.mobile-menu.show {
-  display: flex;
-}
-
-/* Header Section */
-header {
-  height: 100vh;
-  background: linear-gradient(135deg, #FFB6C1, #FFDDF4);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-header h1 {
-  font-size: clamp(2.5rem, 6vw, 3rem);
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid white;
-  animation: typing 3s steps(30, end), blink 0.8s step-end infinite;
-  max-width: 100%;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
+/* Mobile Hamburger Menu */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    /* Hide desktop navbar on mobile */
   }
 
-  to {
+  .hamburger-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #FFDDF4, #FFB6C1);
+    z-index: 1000;
+  }
+
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+    cursor: pointer;
+  }
+
+  .hamburger-icon div {
+    background-color: #fff;
+    height: 3px;
     width: 100%;
+    transition: 0.3s;
   }
-}
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
+  .hamburger-menu.open .hamburger-icon div:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
   }
-}
 
-header p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 2s ease-out forwards;
-  animation-delay: 2s;
-}
-
-.scroll-down {
-  margin-top: 40px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  transition: transform 0.3s;
-}
-
-.scroll-down:hover {
-  transform: scale(1.2);
-}
-
-section {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-section p {
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-@keyframes fadeInUp {
-  from {
+  .hamburger-menu.open .hamburger-icon div:nth-child(2) {
     opacity: 0;
-    transform: translateY(30px);
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .hamburger-menu.open .hamburger-icon div:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .hamburger-menu.open nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    color: #fff;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  nav a:hover {
+    color: #800059;
+  }
+
+  nav a.active {
+    color: #fff8dc;
+    font-weight: bold;
+    border-bottom: 2px solid #800059;
   }
 }
 
-@keyframes bounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(8px);
-  }
+/* Restoring Heading Style for Sections */
+.heading p {
+  font-size: max(4vw, 32px);
+  /* Ensures the font size stays relative to the screen width */
+  font-weight: bold;
+  color: #FFB6C1;
+  /* Color of the headings */
+  gap: max(2vh, 32px);
 }
 
-/* Contact Section */
 .icon-container {
   display: flex;
   justify-content: center;
@@ -251,24 +181,15 @@ section p {
   transform: scale(1.1);
 }
 
-/* Mobile Specific */
+/* Media Queries for Smaller Screens */
 @media (max-width: 800px) {
-  .desktop-nav {
-    display: none;
-  }
-
-  .mobile-navbar {
-    display: flex;
+  .heading p {
+    font-size: max(4vw, 32px);
+    text-align: center;
   }
 
   .icon-container {
     flex-direction: column;
     gap: 50px;
-  }
-
-  .heading p {
-    font-size: max(4vw, 32px);
-    color: #FFB6C1;
-    text-align: center;
   }
 }

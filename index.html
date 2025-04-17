@@ -5,21 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Personal Website</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <!-- Mobile Header with Hamburger -->
-  <div class="mobile-header">
-    <div class="mobile-title" id="mobile-title">home</div>
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
+  <!-- Mobile Nav Bar -->
+  <div class="mobile-navbar">
+    <div class="mobile-title">home</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Dropdown Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#home">home</a>
     <a href="#about me">about me</a>
@@ -28,7 +28,7 @@
     <a href="#handles">contact me!</a>
   </div>
 
-  <!-- Sticky Desktop Nav -->
+  <!-- Desktop Nav -->
   <nav class="desktop-nav">
     <a href="#home">home</a>
     <a href="#about me">about me</a>
@@ -46,7 +46,7 @@
     </div>
   </header>
 
-  <!-- Sections -->
+  <!-- About Me Section -->
   <section id="about me">
     <div class="heading">
       <p>about me</p>
@@ -54,6 +54,7 @@
     <p>#todo</p>
   </section>
 
+  <!-- Experience Section -->
   <section id="experience">
     <div class="heading">
       <p>experience</p>
@@ -61,6 +62,7 @@
     <p>#todo</p>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects">
     <div class="heading">
       <p>projects</p>
@@ -68,6 +70,7 @@
     <p>#todo</p>
   </section>
 
+  <!-- Handles Section -->
   <section id="handles">
     <div class="heading">
       <p>reach me at:</p>
@@ -86,36 +89,38 @@
   </section>
 
   <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const mobileTitle = document.getElementById("mobile-title");
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileTitle = document.querySelector('.mobile-title');
 
-    hamburger.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-    });
+    function toggleMenu() {
+      mobileMenu.classList.toggle('show');
+    }
 
-    function updateHeaderTitle() {
+    function highlightNav() {
       const sections = document.querySelectorAll("section");
-      const scrollY = window.scrollY + 120;
+      const navLinks = document.querySelectorAll(".desktop-nav a");
 
       let current = "home";
-      sections.forEach((section) => {
-        if (scrollY >= section.offsetTop) {
+      const scrollY = window.scrollY + 100;
+      sections.forEach(section => {
+        const offset = section.offsetTop;
+        if (scrollY >= offset) {
           current = section.getAttribute("id");
         }
       });
 
-      mobileTitle.textContent = current;
-      document.querySelectorAll("nav a").forEach((link) => {
+      navLinks.forEach(link => {
         link.classList.remove("active");
         if (link.getAttribute("href") === `#${current}`) {
           link.classList.add("active");
         }
       });
+
+      mobileTitle.textContent = current.toLowerCase();
     }
 
-    window.addEventListener("scroll", updateHeaderTitle);
-    window.addEventListener("load", updateHeaderTitle);
+    window.addEventListener("scroll", highlightNav);
+    window.addEventListener("load", highlightNav);
   </script>
 </body>
 

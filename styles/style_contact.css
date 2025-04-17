@@ -53,7 +53,7 @@ header ul li a {
 .reach-text p {
   font-size: max(4vw, 32px);
   font-weight: bold;
-  color: white;
+  color: #FFB6C1;
   gap: max(2vh, 32px);
 }
 

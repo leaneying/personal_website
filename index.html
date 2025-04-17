@@ -31,6 +31,7 @@
       gap: 2rem;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -168,7 +169,6 @@
       }
     }
 
-    /* Handles Section Styling */
     .heading {
       text-align: center;
     }
@@ -186,6 +186,7 @@
       align-items: center;
       gap: max(5vw, 100px);
       height: max(40vh, 20px);
+      flex-wrap: wrap;
     }
 
     .icon-container a {
@@ -213,6 +214,7 @@
       transform: scale(1.1);
     }
 
+    /* Responsive Styling for Mobile */
     @media (max-width: 800px) {
       .heading p {
         color: #FFB6C1;
@@ -225,6 +227,55 @@
         gap: 50px;
       }
     }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        border-right: 2px solid white;
+        animation: typing 2.5s steps(22, end), blink 0.8s step-end infinite;
+      }
+
+      header p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+
+      .scroll-down {
+        font-size: 1.2rem;
+        margin-top: 20px;
+      }
+
+      section {
+        padding: 60px 15px;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      section p {
+        font-size: 1rem;
+      }
+
+      .icon-container {
+        gap: 30px;
+      }
+
+      .icon-container img {
+        max-height: 60px;
+      }
+
+      .icon-container p {
+        font-size: 1.2rem;
+      }
+    }
   </style>
 </head>
 
@@ -233,7 +284,7 @@
   <!-- Sticky Nav -->
   <nav>
     <a href="#home">home</a>
-    <a href="#about me">about me</a>
+    <a href="#about">about me</a>
     <a href="#experience">experience</a>
     <a href="#projects">projects</a>
     <a href="#handles">contact me!</a>
@@ -249,7 +300,7 @@
   </header>
 
   <!-- About Me Section -->
-  <section id="about me">
+  <section id="about">
     <div class="heading">
       <p>about me</p>
     </div>
@@ -271,7 +322,7 @@
   <!-- Projects Section -->
   <section id="projects">
     <div class="heading">
-      <p>experience</p>
+      <p>projects</p>
     </div>
     <p>
       #todo
@@ -283,7 +334,6 @@
     <div class="heading">
       <p>reach me at:</p>
     </div>
-    <div></div>
     <div class="icon-container">
       <a href="https://www.linkedin.com/in/leane-ying-792a63210/" target="_blank">
         <img src="index/linkedin.png" alt="LinkedIn">

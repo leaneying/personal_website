@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Personal Website</title>
-
   <style>
     * {
       margin: 0;
@@ -20,7 +19,7 @@
       color: #333;
     }
 
-    /* Sticky Nav */
+    /* Desktop Nav */
     nav {
       position: sticky;
       top: 0;
@@ -31,7 +30,6 @@
       gap: 2rem;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      flex-wrap: wrap;
     }
 
     nav a {
@@ -177,7 +175,6 @@
       font-size: max(4vw, 32px);
       font-weight: bold;
       color: #FFB6C1;
-      gap: max(2vh, 32px);
     }
 
     .icon-container {
@@ -186,7 +183,6 @@
       align-items: center;
       gap: max(5vw, 100px);
       height: max(40vh, 20px);
-      flex-wrap: wrap;
     }
 
     .icon-container a {
@@ -214,65 +210,69 @@
       transform: scale(1.1);
     }
 
-    /* Responsive Styling for Mobile */
+    /* Mobile Styles */
     @media (max-width: 800px) {
-      .heading p {
-        color: #FFB6C1;
-        font-size: max(4vw, 32px);
-        text-align: center;
-      }
-
-      .icon-container {
-        flex-direction: column;
-        gap: 50px;
-      }
-    }
-
-    @media (max-width: 600px) {
       nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        justify-content: space-between;
         padding: 1rem;
       }
 
-      header h1 {
-        font-size: 2rem;
-        border-right: 2px solid white;
-        animation: typing 2.5s steps(22, end), blink 0.8s step-end infinite;
+      nav a {
+        display: none;
       }
 
-      header p {
-        font-size: 1rem;
-        padding: 0 1rem;
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 1001;
       }
 
-      .scroll-down {
-        font-size: 1.2rem;
-        margin-top: 20px;
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background: white;
+        transition: all 0.3s ease;
       }
 
-      section {
-        padding: 60px 15px;
+      .hamburger.open div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
       }
 
-      section h2 {
-        font-size: 1.6rem;
+      .hamburger.open div:nth-child(2) {
+        opacity: 0;
       }
 
-      section p {
-        font-size: 1rem;
+      .hamburger.open div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
       }
 
-      .icon-container {
-        gap: 30px;
+      .mobile-menu {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #FFDDF4, #FFB6C1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease-in-out;
+        z-index: 1000;
       }
 
-      .icon-container img {
-        max-height: 60px;
+      .mobile-menu.show {
+        transform: translateY(0);
       }
 
-      .icon-container p {
+      .mobile-menu a {
+        display: block;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
         font-size: 1.2rem;
       }
     }
@@ -280,56 +280,58 @@
 </head>
 
 <body>
-
   <!-- Sticky Nav -->
   <nav>
-    <a href="#home">home</a>
-    <a href="#about">about me</a>
-    <a href="#experience">experience</a>
-    <a href="#projects">projects</a>
-    <a href="#handles">contact me!</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">home</a>
+      <a href="#about me">about me</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#handles">contact me!</a>
+    </div>
+    <a href="#home" class="desktop-link">home</a>
+    <a href="#about me" class="desktop-link">about me</a>
+    <a href="#experience" class="desktop-link">experience</a>
+    <a href="#projects" class="desktop-link">projects</a>
+    <a href="#handles" class="desktop-link">contact me!</a>
   </nav>
 
-  <!-- Hero / Home Section -->
+  <!-- Hero Section -->
   <header id="home">
     <h1>hi, i'm leane!</h1>
     <p>junior at Cornell, user-focused software developer, and horror movie fanatic</p>
-    <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+    <div class="scroll-down" onclick="document.getElementById('about me').scrollIntoView({ behavior: 'smooth' });">
       ↓
     </div>
   </header>
 
-  <!-- About Me Section -->
-  <section id="about">
+  <!-- Sections -->
+  <section id="about me">
     <div class="heading">
       <p>about me</p>
     </div>
-    <p>
-      #todo
-    </p>
+    <p>#todo</p>
   </section>
 
-  <!-- Experience Section -->
   <section id="experience">
     <div class="heading">
       <p>experience</p>
     </div>
-    <p>
-      #todo
-    </p>
+    <p>#todo</p>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects">
     <div class="heading">
       <p>projects</p>
     </div>
-    <p>
-      #todo
-    </p>
+    <p>#todo</p>
   </section>
 
-  <!-- Handles Section -->
   <section id="handles">
     <div class="heading">
       <p>reach me at:</p>
@@ -347,19 +349,15 @@
     </div>
   </section>
 
-  <!-- Scroll Effects Script -->
   <script>
-    const handlesLogos = document.querySelector('.handles-logos');
-
-    function revealOnScroll() {
-      const triggerBottom = window.innerHeight * 0.85;
-      const boxTop = handlesLogos?.getBoundingClientRect().top;
-      if (boxTop < triggerBottom) {
-        handlesLogos?.classList.add('visible');
-      }
+    function toggleMenu() {
+      const hamburger = document.querySelector('.hamburger');
+      const menu = document.getElementById('mobileMenu');
+      hamburger.classList.toggle('open');
+      menu.classList.toggle('show');
     }
 
-    function highlightNav() {
+    window.addEventListener("scroll", () => {
       const sections = document.querySelectorAll("section");
       const navLinks = document.querySelectorAll("nav a");
 
@@ -378,19 +376,8 @@
           link.classList.add("active");
         }
       });
-    }
-
-    window.addEventListener("scroll", () => {
-      revealOnScroll();
-      highlightNav();
-    });
-
-    window.addEventListener("load", () => {
-      revealOnScroll();
-      highlightNav();
     });
   </script>
-
 </body>
 
 </html>

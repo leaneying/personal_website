@@ -5,31 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Personal Website</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Mobile Nav Bar -->
-  <div class="mobile-navbar">
-    <div class="mobile-title">home</div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
 
-  <!-- Mobile Dropdown Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#home">home</a>
-    <a href="#about me">about me</a>
-    <a href="#experience">experience</a>
-    <a href="#projects">projects</a>
-    <a href="#handles">contact me!</a>
-  </div>
-
-  <!-- Desktop Nav -->
-  <nav class="desktop-nav">
+  <!-- Sticky Nav -->
+  <nav>
     <a href="#home">home</a>
     <a href="#about me">about me</a>
     <a href="#experience">experience</a>
@@ -37,11 +19,27 @@
     <a href="#handles">contact me!</a>
   </nav>
 
+  <!-- Hamburger Menu for Mobile -->
+  <div class="hamburger-menu">
+    <div class="hamburger-icon">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav class="mobile-nav">
+      <a href="#home">home</a>
+      <a href="#about me">about me</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#handles">contact me!</a>
+    </nav>
+  </div>
+
   <!-- Hero / Home Section -->
   <header id="home">
     <h1>hi, i'm leane!</h1>
     <p>junior at Cornell, user-focused software developer, and horror movie fanatic</p>
-    <div class="scroll-down" onclick="document.getElementById('about me').scrollIntoView({ behavior: 'smooth' });">
+    <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
       ↓
     </div>
   </header>
@@ -88,40 +86,57 @@
     </div>
   </section>
 
+  <!-- Scroll Effects Script -->
   <script>
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileTitle = document.querySelector('.mobile-title');
+    const handlesLogos = document.querySelector('.handles-logos');
 
-    function toggleMenu() {
-      mobileMenu.classList.toggle('show');
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      const boxTop = handlesLogos?.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        handlesLogos?.classList.add('visible');
+      }
     }
 
     function highlightNav() {
       const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll(".desktop-nav a");
+      const navLinks = document.querySelectorAll("nav a");
 
       let current = "home";
-      const scrollY = window.scrollY + 100;
-      sections.forEach(section => {
+      sections.forEach((section) => {
+        const top = window.scrollY + 100;
         const offset = section.offsetTop;
-        if (scrollY >= offset) {
+        if (top >= offset) {
           current = section.getAttribute("id");
         }
       });
 
-      navLinks.forEach(link => {
+      navLinks.forEach((link) => {
         link.classList.remove("active");
         if (link.getAttribute("href") === `#${current}`) {
           link.classList.add("active");
         }
       });
-
-      mobileTitle.textContent = current.toLowerCase();
     }
 
-    window.addEventListener("scroll", highlightNav);
-    window.addEventListener("load", highlightNav);
+    window.addEventListener("scroll", () => {
+      revealOnScroll();
+      highlightNav();
+    });
+
+    window.addEventListener("load", () => {
+      revealOnScroll();
+      highlightNav();
+    });
+
+    // Hamburger menu functionality
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    const mobileNav = document.querySelector('.mobile-nav');
+    hamburgerIcon.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
   </script>
+
 </body>
 
 </html>

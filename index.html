@@ -11,7 +11,7 @@
 <body>
 
   <!-- Sticky Nav -->
-  <nav>
+  <nav class="navbar">
     <a href="#home">home</a>
     <a href="#about me">about me</a>
     <a href="#experience">experience</a>
@@ -20,13 +20,13 @@
   </nav>
 
   <!-- Hamburger Menu for Mobile -->
-  <div class="hamburger-menu">
-    <div class="hamburger-icon">
+  <div class="hamburger-menu" id="hamburger-menu">
+    <div class="hamburger-icon" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
     </div>
-    <nav class="mobile-nav">
+    <nav class="mobile-nav" id="mobile-nav">
       <a href="#home">home</a>
       <a href="#about me">about me</a>
       <a href="#experience">experience</a>
@@ -88,53 +88,10 @@
 
   <!-- Scroll Effects Script -->
   <script>
-    const handlesLogos = document.querySelector('.handles-logos');
-
-    function revealOnScroll() {
-      const triggerBottom = window.innerHeight * 0.85;
-      const boxTop = handlesLogos?.getBoundingClientRect().top;
-      if (boxTop < triggerBottom) {
-        handlesLogos?.classList.add('visible');
-      }
+    function toggleMenu() {
+      const mobileNav = document.getElementById("mobile-nav");
+      mobileNav.classList.toggle("open");
     }
-
-    function highlightNav() {
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("nav a");
-
-      let current = "home";
-      sections.forEach((section) => {
-        const top = window.scrollY + 100;
-        const offset = section.offsetTop;
-        if (top >= offset) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("active");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", () => {
-      revealOnScroll();
-      highlightNav();
-    });
-
-    window.addEventListener("load", () => {
-      revealOnScroll();
-      highlightNav();
-    });
-
-    // Hamburger menu functionality
-    const hamburgerIcon = document.querySelector('.hamburger-icon');
-    const mobileNav = document.querySelector('.mobile-nav');
-    hamburgerIcon.addEventListener('click', () => {
-      mobileNav.classList.toggle('open');
-    });
   </script>
 
 </body>

@@ -5,357 +5,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Personal Website</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f5f5;
-      color: #333;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background: linear-gradient(135deg, #FFDDF4, #FFB6C1);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-      padding: 0.3rem 0;
-      transition: all 0.3s ease;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 100%;
-      background-color: #f5d4f2;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
-    }
-
-    nav a:hover {
-      transform: scale(1.05);
-      color: #f5d4f2;
-    }
-
-    nav a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    nav a.active {
-      color: #fffae1;
-    }
-
-    header {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #FFB6C1, #FFDDF4);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 3px solid white;
-      animation: typing 3s steps(30, end), blink 0.8s step-end infinite;
-      max-width: 90vw;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 100%;
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 2s ease-out forwards;
-      animation-delay: 2s;
-    }
-
-    .scroll-down {
-      margin-top: 40px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      animation: bounce 2s infinite;
-      transition: transform 0.3s;
-    }
-
-    .scroll-down:hover {
-      transform: scale(1.2);
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    section p {
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes bounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(8px);
-      }
-    }
-
-    .heading {
-      text-align: center;
-    }
-
-    .heading p {
-      font-size: max(4vw, 32px);
-      font-weight: bold;
-      color: #FFB6C1;
-      gap: max(2vh, 32px);
-    }
-
-    .icon-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: max(5vw, 100px);
-      height: max(40vh, 20px);
-    }
-
-    .icon-container a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.3s;
-    }
-
-    .icon-container p {
-      color: white;
-      font-size: calc(16px + 4vw);
-      font-weight: bold;
-    }
-
-    .icon-container img {
-      max-height: 8vw;
-      max-height: calc(16px + 8vw);
-      transition: transform 0.3s;
-    }
-
-    .icon-container a:hover img {
-      transform: scale(1.1);
-    }
-
-    /* Mobile hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 24px;
-      height: 18px;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      height: 3px;
-      background-color: white;
-      border-radius: 2px;
-    }
-
-    .hamburger.open div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.open div:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: #FFB6C1;
-      padding: 1rem;
-      position: absolute;
-      top: 60px;
-      width: 100%;
-      z-index: 999;
-    }
-
-    .mobile-menu.show {
-      display: flex;
-      animation: fadeInDown 0.3s ease-out;
-    }
-
-    .mobile-menu a {
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 0.5rem 0;
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .mobile-header {
-      color: white;
-      font-weight: bold;
-      font-size: 1.2rem;
-      padding-left: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    @media (max-width: 800px) {
-      nav {
-        justify-content: space-between;
-      }
-
-      .desktop-link {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .heading p {
-        text-align: center;
-      }
-
-      .icon-container {
-        flex-direction: column;
-        gap: 50px;
-      }
-
-      header h1 {
-        font-size: 2.2rem;
-        white-space: normal;
-        border-right: none;
-        animation: none;
-      }
-    }
-
-    @media (min-width: 801px) {
-
-      .mobile-menu,
-      .hamburger,
-      .mobile-header {
-        display: none !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Sticky Nav -->
-  <nav>
-    <div class="hamburger" onclick="toggleMenu()">
+  <!-- Mobile Header with Hamburger -->
+  <div class="mobile-header">
+    <div class="mobile-title" id="mobile-title">home</div>
+    <div class="hamburger" id="hamburger">
       <div></div>
       <div></div>
       <div></div>
     </div>
-    <a href="#home" class="desktop-link">home</a>
-    <a href="#about me" class="desktop-link">about me</a>
-    <a href="#experience" class="desktop-link">experience</a>
-    <a href="#projects" class="desktop-link">projects</a>
-    <a href="#handles" class="desktop-link">contact me!</a>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-header" id="mobileHeader">home</div>
-    <a href="#home" onclick="toggleMenu()">home</a>
-    <a href="#about me" onclick="toggleMenu()">about me</a>
-    <a href="#experience" onclick="toggleMenu()">experience</a>
-    <a href="#projects" onclick="toggleMenu()">projects</a>
-    <a href="#handles" onclick="toggleMenu()">contact me!</a>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">home</a>
+    <a href="#about me">about me</a>
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
+    <a href="#handles">contact me!</a>
+  </div>
+
+  <!-- Sticky Desktop Nav -->
+  <nav class="desktop-nav">
+    <a href="#home">home</a>
+    <a href="#about me">about me</a>
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
+    <a href="#handles">contact me!</a>
+  </nav>
+
+  <!-- Hero / Home Section -->
   <header id="home">
     <h1>hi, i'm leane!</h1>
     <p>junior at Cornell, user-focused software developer, and horror movie fanatic</p>
-    <div class="scroll-down" onclick="document.getElementById('about me').scrollIntoView({ behavior: 'smooth' });">↓
+    <div class="scroll-down" onclick="document.getElementById('about me').scrollIntoView({ behavior: 'smooth' });">
+      ↓
     </div>
   </header>
 
-  <!-- About Me -->
+  <!-- Sections -->
   <section id="about me">
     <div class="heading">
       <p>about me</p>
@@ -363,7 +54,6 @@
     <p>#todo</p>
   </section>
 
-  <!-- Experience -->
   <section id="experience">
     <div class="heading">
       <p>experience</p>
@@ -371,7 +61,6 @@
     <p>#todo</p>
   </section>
 
-  <!-- Projects -->
   <section id="projects">
     <div class="heading">
       <p>projects</p>
@@ -379,7 +68,6 @@
     <p>#todo</p>
   </section>
 
-  <!-- Contact -->
   <section id="handles">
     <div class="heading">
       <p>reach me at:</p>
@@ -398,45 +86,36 @@
   </section>
 
   <script>
-    function toggleMenu() {
-      const hamburger = document.querySelector('.hamburger');
-      const menu = document.getElementById('mobileMenu');
-      hamburger.classList.toggle('open');
-      menu.classList.toggle('show');
-    }
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileTitle = document.getElementById("mobile-title");
 
-    window.addEventListener("scroll", () => {
+    hamburger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+    });
+
+    function updateHeaderTitle() {
       const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("nav a");
-      let current = "home";
+      const scrollY = window.scrollY + 120;
 
+      let current = "home";
       sections.forEach((section) => {
-        const top = window.scrollY + 100;
-        const offset = section.offsetTop;
-        if (top >= offset) {
+        if (scrollY >= section.offsetTop) {
           current = section.getAttribute("id");
         }
       });
 
-      // Highlight nav links (desktop)
-      navLinks.forEach((link) => {
+      mobileTitle.textContent = current;
+      document.querySelectorAll("nav a").forEach((link) => {
         link.classList.remove("active");
         if (link.getAttribute("href") === `#${current}`) {
           link.classList.add("active");
         }
       });
+    }
 
-      // Update mobile header label
-      const mobileHeader = document.getElementById("mobileHeader");
-      if (mobileHeader) {
-        mobileHeader.textContent = current;
-      }
-    });
-
-    window.addEventListener("load", () => {
-      const mobileHeader = document.getElementById("mobileHeader");
-      if (mobileHeader) mobileHeader.textContent = "home";
-    });
+    window.addEventListener("scroll", updateHeaderTitle);
+    window.addEventListener("load", updateHeaderTitle);
   </script>
 </body>
 

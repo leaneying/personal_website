@@ -64,6 +64,10 @@
     color: #fffae1;
   }
 
+  .mobile-header-container {
+    display: none;
+  }
+
   header {
     min-height: 100vh;
     background: linear-gradient(135deg, #FFB6C1, #FFDDF4);
@@ -221,6 +225,7 @@
     height: 3px;
     background-color: white;
     border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
   .hamburger.open div:nth-child(1) {
@@ -240,8 +245,10 @@
     flex-direction: column;
     background: #FFB6C1;
     padding: 1rem;
-    position: absolute;
+    position: fixed;
     top: 60px;
+    left: 0;
+    right: 0;
     width: 100%;
     z-index: 999;
   }
@@ -274,13 +281,13 @@
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
+    margin-left: 10px;
   }
 
   @media (max-width: 800px) {
     nav {
       justify-content: space-between;
+      align-items: center;
     }
 
     .desktop-link {
@@ -289,6 +296,10 @@
 
     .hamburger {
       display: flex;
+    }
+
+    .mobile-header-container {
+      display: block;
     }
 
     .heading p {
@@ -312,7 +323,7 @@
 
     .mobile-menu,
     .hamburger,
-    .mobile-header {
+    .mobile-header-container {
       display: none !important;
     }
   }
@@ -322,20 +333,24 @@
 <body>
   <!-- Sticky Nav -->
   <nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="mobile-header-container">
+      <span class="mobile-header" id="mobileHeader">home</span>
     </div>
+
     <a href="#home" class="desktop-link">home</a>
     <a href="#about me" class="desktop-link">about me</a>
     <a href="#experience" class="desktop-link">experience</a>
     <a href="#projects" class="desktop-link">projects</a>
     <a href="#handles" class="desktop-link">contact me!</a>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-header" id="mobileHeader">home</div>
     <a href="#home" onclick="toggleMenu()">home</a>
     <a href="#about me" onclick="toggleMenu()">about me</a>
     <a href="#experience" onclick="toggleMenu()">experience</a>

@@ -1,342 +1,457 @@
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Personal Website</title>
+<!DOCTYPE html>
+<html lang="en">
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Website</title>
 
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fcfbf4;
-    color: #333;
-  }
-
-  nav {
-    position: sticky;
-    top: 0;
-    background: linear-gradient(135deg, #FF9dab, #FFB6C1);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    padding: 0.3rem 0;
-    transition: all 0.3s ease;
-  }
-
-  nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
-    background-color: #f5d4f2;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-  }
-
-  nav a:hover {
-    transform: scale(1.05);
-    color: #f98394;
-  }
-
-  nav a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  nav a.active {
-    color: #ff6a80;
-    font-weight: bold;
-  }
-
-  .mobile-header-container {
-    display: none;
-  }
-
-  header {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #FFB6C1, #FF9dab);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-  }
-
-  header h1 {
-    font-size: 4rem;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid white;
-    animation: typing 3s steps(30, end), blink 0.8s step-end infinite;
-    max-width: 90vw;
-  }
-
-  @keyframes typing {
-    from {
-      width: 0;
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-
-  header p {
-    font-size: 1.8rem;
-    margin-top: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 2s ease-out forwards;
-    animation-delay: 2s;
-  }
-
-  .scroll-down {
-    margin-top: 40px;
-    font-size: 2rem;
-    cursor: pointer;
-    animation: bounce 2s infinite;
-    transition: transform 0.3s;
-  }
-
-  .scroll-down:hover {
-    transform: scale(1.2);
-  }
-
-  section {
-    padding: 80px 20px;
-    max-width: 900px;
-    margin: auto;
-  }
-
-  section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  section p {
-    line-height: 1.6;
-    font-size: 1.1rem;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fcfbf4;
+      color: #333;
     }
 
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes bounce {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(8px);
-    }
-  }
-
-  #handles {
-    padding-bottom: 120px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .heading {
-    text-align: center;
-  }
-
-  .heading p {
-    font-size: max(4vw, 32px);
-    font-weight: bold;
-    color: #FFB6C1;
-    gap: max(2vh, 32px);
-  }
-
-  .icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: max(5vw, 100px);
-    height: max(40vh, 20px);
-  }
-
-  .icon-container a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.3s;
-  }
-
-  .icon-container p {
-    color: white;
-    font-size: calc(16px + 4vw);
-    font-weight: bold;
-  }
-
-  .icon-container img {
-    max-height: 8vw;
-    max-height: calc(16px + 8vw);
-    transition: transform 0.3s;
-  }
-
-  .icon-container a:hover img {
-    transform: scale(1.1);
-  }
-
-  /* Mobile hamburger */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    cursor: pointer;
-  }
-
-  .hamburger div {
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  .hamburger.open div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .hamburger.open div:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.open div:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: #FFB6C1;
-    padding: 1rem;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 999;
-  }
-
-  .mobile-menu.show {
-    display: flex;
-    animation: fadeInDown 0.3s ease-out;
-  }
-
-  .mobile-menu a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 0.5rem 0;
-  }
-
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .mobile-header {
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-left: 10px;
-  }
-
-  @media (max-width: 800px) {
     nav {
-      justify-content: space-between;
-      align-items: center;
+      position: sticky;
+      top: 0;
+      background: linear-gradient(135deg, #FF9dab, #FFB6C1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .desktop-link {
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      padding: 0.3rem 0;
+      transition: all 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #f5d4f2;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover {
+      transform: scale(1.05);
+      color: #f98394;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    nav a.active {
+      color: #ff6a80;
+      font-weight: bold;
+    }
+
+    .mobile-header-container {
       display: none;
     }
 
-    .hamburger {
+    /* Header section */
+    header {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #FFB6C1, #FF9dab);
+      color: white;
       display: flex;
-    }
-
-    .mobile-header-container {
-      display: block;
-    }
-
-    .heading p {
-      text-align: center;
-    }
-
-    .icon-container {
       flex-direction: column;
-      gap: 50px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    /* Cloud container - fixed position */
+    .cloud-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      /* Allow clicking through clouds */
+    }
+
+    /* Individual cloud styling with SVG images */
+    .cloud {
+      position: absolute;
+      width: auto;
+      height: auto;
+      opacity: 0.7;
+      transition: transform 20s ease-in-out;
+    }
+
+    /* Different cloud sizes, positions, and opacities */
+    .cloud1 {
+      width: 180px;
+      top: 8%;
+      left: 3%;
+      opacity: 0.5;
+    }
+
+    .cloud2 {
+      width: 220px;
+      top: 10%;
+      right: 5%;
+      opacity: 0.4;
+    }
+
+    .cloud3 {
+      width: 150px;
+      bottom: 15%;
+      left: 10%;
+      opacity: 0.6;
+    }
+
+    .cloud4 {
+      width: 120px;
+      bottom: 20%;
+      right: 8%;
+      opacity: 0.7;
+    }
+
+    .cloud5 {
+      width: 90px;
+      top: 40%;
+      left: 7%;
+      opacity: 0.5;
+    }
+
+    .cloud6 {
+      width: 250px;
+      top: 35%;
+      right: 2%;
+      opacity: 0.3;
+    }
+
+    .cloud7 {
+      width: 70px;
+      bottom: 40%;
+      left: 20%;
+      opacity: 0.7;
+    }
+
+    .cloud8 {
+      width: 200px;
+      bottom: 45%;
+      right: 25%;
+      opacity: 0.2;
+    }
+
+    .cloud9 {
+      width: 40px;
+      top: 30%;
+      left: 30%;
+      opacity: 0.4;
+    }
+
+    .cloud10 {
+      width: 60px;
+      top: 20%;
+      left: 45%;
+      opacity: 0.3;
+    }
+
+    /* Small cloud in the center that's very transparent */
+    .cloud11 {
+      width: 130px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -80%);
+      opacity: 0.15;
+    }
+
+    /* Make header content appear above clouds */
+    header h1,
+    header p,
+    header .scroll-down {
+      position: relative;
+      z-index: 2;
     }
 
     header h1 {
+      font-size: 4rem;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid white;
+      animation: typing 3s steps(30, end), blink 0.8s step-end infinite;
+      max-width: 90vw;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    header p {
+      font-size: 1.8rem;
+      margin-top: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 2s ease-out forwards;
+      animation-delay: 2s;
+    }
+
+    .scroll-down {
+      margin-top: 40px;
+      font-size: 2rem;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+      transition: transform 0.3s;
+    }
+
+    .scroll-down:hover {
+      transform: scale(1.2);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
       font-size: 2.2rem;
-      white-space: normal;
-      border-right: none;
-      animation: none;
+      margin-bottom: 20px;
+      text-align: center;
     }
-  }
 
-  @media (min-width: 801px) {
-
-    .mobile-menu,
-    .hamburger,
-    .mobile-header-container {
-      display: none !important;
+    section p {
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
-  }
-</style>
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(8px);
+      }
+    }
+
+    #handles {
+      padding-bottom: 120px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .heading {
+      text-align: center;
+    }
+
+    .heading p {
+      font-size: max(4vw, 32px);
+      font-weight: bold;
+      color: #FFB6C1;
+      gap: max(2vh, 32px);
+    }
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: max(5vw, 100px);
+      height: max(40vh, 20px);
+    }
+
+    .icon-container a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s;
+    }
+
+    .icon-container p {
+      color: white;
+      font-size: calc(16px + 4vw);
+      font-weight: bold;
+    }
+
+    .icon-container img {
+      max-height: 8vw;
+      max-height: calc(16px + 8vw);
+      transition: transform 0.3s;
+    }
+
+    .icon-container a:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.open div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #FFB6C1;
+      padding: 1rem;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .mobile-menu.show {
+      display: flex;
+      animation: fadeInDown 0.3s ease-out;
+    }
+
+    .mobile-menu a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.5rem 0;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .mobile-header {
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .desktop-link {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-header-container {
+        display: block;
+      }
+
+      .heading p {
+        text-align: center;
+      }
+
+      .icon-container {
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+        white-space: normal;
+        border-right: none;
+        animation: none;
+      }
+    }
+
+    @media (min-width: 801px) {
+
+      .mobile-menu,
+      .hamburger,
+      .mobile-header-container {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -365,6 +480,21 @@
     <a href="#experience" onclick="toggleMenu()">experience</a>
     <a href="#projects" onclick="toggleMenu()">projects</a>
     <a href="#handles" onclick="toggleMenu()">contact me!</a>
+  </div>
+
+  <!-- Cloud container - placed at the body level for fixed positioning -->
+  <div class="cloud-container" id="cloudContainer">
+    <img src="clouds/cloud1.svg" alt="" class="cloud cloud1">
+    <img src="clouds/cloud2.svg" alt="" class="cloud cloud2">
+    <img src="clouds/cloud3.svg" alt="" class="cloud cloud3">
+    <img src="clouds/cloud4.svg" alt="" class="cloud cloud4">
+    <img src="clouds/cloud5.svg" alt="" class="cloud cloud5">
+    <img src="clouds/cloud6.svg" alt="" class="cloud cloud6">
+    <img src="clouds/cloud7.svg" alt="" class="cloud cloud7">
+    <img src="clouds/cloud8.svg" alt="" class="cloud cloud8">
+    <img src="clouds/cloud9.svg" alt="" class="cloud cloud9">
+    <img src="clouds/cloud10.svg" alt="" class="cloud cloud10">
+    <img src="clouds/cloud11.svg" alt="" class="cloud cloud11">
   </div>
 
   <!-- Hero Section -->
@@ -425,6 +555,48 @@
       menu.classList.toggle('show');
     }
 
+    // Function to handle cloud visibility based on scroll position
+    function handleCloudVisibility() {
+      const header = document.getElementById('home');
+      const cloudContainer = document.getElementById('cloudContainer');
+      const headerBottom = header.offsetTop + header.offsetHeight;
+
+      if (window.scrollY > headerBottom) {
+        cloudContainer.style.display = 'none';
+      } else {
+        cloudContainer.style.display = 'block';
+      }
+    }
+
+    // Function to add subtle floating animation to clouds
+    function animateClouds() {
+      const clouds = document.querySelectorAll('.cloud');
+
+      clouds.forEach((cloud, index) => {
+        // Create random movement values
+        const xMove = (Math.random() * 20) - 10; // -10 to 10px
+        const yMove = (Math.random() * 10) - 5;  // -5 to 5px
+        const duration = 15 + (Math.random() * 10); // 15-25s
+        const delay = index * 0.5; // Stagger the animations
+
+        // Apply the animation
+        cloud.style.transition = `transform ${duration}s ease-in-out`;
+        cloud.style.transitionDelay = `${delay}s`;
+        cloud.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+        // Reset after animation completes to create continuous effect
+        setTimeout(() => {
+          cloud.style.transition = 'none';
+          cloud.style.transform = 'translate(0, 0)';
+
+          // Restart animation after a short delay
+          setTimeout(() => {
+            animateClouds();
+          }, 100);
+        }, (duration + delay) * 1000);
+      });
+    }
+
     window.addEventListener("scroll", () => {
       const sections = document.querySelectorAll("section");
       const navLinks = document.querySelectorAll("nav a");
@@ -451,11 +623,20 @@
       if (mobileHeader) {
         mobileHeader.textContent = current;
       }
+
+      // Handle cloud visibility
+      handleCloudVisibility();
     });
 
     window.addEventListener("load", () => {
       const mobileHeader = document.getElementById("mobileHeader");
       if (mobileHeader) mobileHeader.textContent = "home";
+
+      // Initialize cloud visibility
+      handleCloudVisibility();
+
+      // Start cloud animation
+      animateClouds();
     });
   </script>
 </body>

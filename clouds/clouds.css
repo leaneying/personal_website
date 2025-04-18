@@ -1,5 +1,3 @@
-/* This is an optional separate file for cloud styling if you want to use it later */
-
 /* Cloud container - fixed position */
 .cloud-container {
   position: fixed;
@@ -23,74 +21,85 @@
 }
 
 /* Different cloud sizes, positions, and opacities */
-/* Top clouds - positioned higher */
+/* Top clouds - positioned higher and more spread out */
 .cloud1 {
   width: 500px;
-  top: 2%;
-  left: 3%;
+  top: -2%;
+  /* Moved higher, partially off-screen */
+  left: -5%;
+  /* Moved more left, partially off-screen */
   opacity: 0.5;
 }
 
 .cloud2 {
   width: 550px;
-  top: 1%;
-  right: 5%;
+  top: -3%;
+  /* Moved higher, partially off-screen */
+  right: -8%;
+  /* Moved more right, partially off-screen */
   opacity: 0.4;
 }
 
 .cloud3 {
   width: 480px;
   bottom: 15%;
-  left: 10%;
+  left: -8%;
+  /* Moved more left, partially off-screen */
   opacity: 0.6;
 }
 
 .cloud4 {
   width: 450px;
   bottom: 20%;
-  right: 8%;
+  right: -10%;
+  /* Moved more right, partially off-screen */
   opacity: 0.7;
 }
 
 .cloud5 {
   width: 420px;
   top: 25%;
-  left: 7%;
+  left: -12%;
+  /* Moved more left, partially off-screen */
   opacity: 0.5;
 }
 
 .cloud6 {
   width: 600px;
   top: 15%;
-  right: 2%;
+  right: -15%;
+  /* Moved more right, partially off-screen */
   opacity: 0.3;
 }
 
 .cloud7 {
   width: 400px;
   bottom: 40%;
-  left: 20%;
+  left: -5%;
+  /* Moved more left, partially off-screen */
   opacity: 0.7;
 }
 
 .cloud8 {
   width: 550px;
   bottom: 45%;
-  right: 25%;
+  right: -12%;
+  /* Moved more right, partially off-screen */
   opacity: 0.2;
 }
 
 .cloud9 {
   width: 380px;
   top: 30%;
-  left: 30%;
+  left: 20%;
   opacity: 0.4;
 }
 
 .cloud10 {
   width: 420px;
-  top: 5%;
-  left: 45%;
+  top: -5%;
+  /* Moved higher, partially off-screen */
+  left: 35%;
   opacity: 0.3;
 }
 
@@ -105,7 +114,8 @@
 /* Additional clouds */
 .cloud12 {
   width: 520px;
-  top: 3%;
+  top: -4%;
+  /* Moved higher, partially off-screen */
   left: 60%;
   opacity: 0.35;
 }
@@ -113,140 +123,160 @@
 .cloud13 {
   width: 580px;
   top: 60%;
-  right: 15%;
+  right: -18%;
+  /* Moved more right, partially off-screen */
   opacity: 0.25;
 }
 
 .cloud14 {
   width: 500px;
   bottom: 30%;
-  left: 40%;
+  left: 25%;
   opacity: 0.4;
 }
 
 .cloud15 {
   width: 450px;
   top: 70%;
-  right: 40%;
+  right: 25%;
   opacity: 0.3;
 }
 
-/* New clouds - focused on bottom area */
+/* New clouds - focused on bottom area and more spread out */
 .cloud16 {
   width: 550px;
-  bottom: 5%;
-  left: 5%;
+  bottom: -5%;
+  /* Moved lower, partially off-screen */
+  left: -10%;
+  /* Moved more left, partially off-screen */
   opacity: 0.45;
 }
 
 .cloud17 {
   width: 600px;
-  bottom: 2%;
-  right: 10%;
+  bottom: -8%;
+  /* Moved lower, partially off-screen */
+  right: -15%;
+  /* Moved more right, partially off-screen */
   opacity: 0.35;
 }
 
 .cloud18 {
   width: 520px;
   bottom: 10%;
-  left: 30%;
+  left: 15%;
   opacity: 0.4;
 }
 
 .cloud19 {
   width: 480px;
   bottom: 8%;
-  right: 35%;
+  right: 20%;
   opacity: 0.5;
 }
 
 .cloud20 {
   width: 550px;
   bottom: 25%;
-  left: 60%;
+  left: 40%;
   opacity: 0.3;
 }
 
-/* Mobile cloud sizes - slightly bigger than original */
+/* Mobile cloud sizes - slightly bigger than original and fewer clouds */
 @media (max-width: 800px) {
+
+  /* Hide some clouds on mobile to reduce clutter */
+  .cloud11,
+  .cloud13,
+  .cloud15,
+  .cloud17,
+  .cloud19,
+  .cloud20 {
+    display: none;
+  }
+
+  /* Adjust remaining clouds to be more spread out */
   .cloud1 {
     width: 220px;
+    top: -5%;
+    left: -10%;
   }
 
   .cloud2 {
     width: 260px;
+    top: -3%;
+    right: -15%;
   }
 
   .cloud3 {
     width: 190px;
+    bottom: 15%;
+    left: -15%;
   }
 
   .cloud4 {
     width: 160px;
+    bottom: 20%;
+    right: -10%;
   }
 
   .cloud5 {
     width: 130px;
+    top: 25%;
+    left: -8%;
   }
 
   .cloud6 {
     width: 290px;
+    top: 15%;
+    right: -20%;
   }
 
   .cloud7 {
     width: 110px;
+    bottom: 40%;
+    left: 5%;
   }
 
   .cloud8 {
     width: 240px;
+    bottom: 45%;
+    right: -15%;
   }
 
   .cloud9 {
     width: 80px;
+    top: 30%;
+    left: 70%;
   }
 
   .cloud10 {
     width: 100px;
-  }
-
-  .cloud11 {
-    width: 170px;
+    top: 5%;
+    left: 60%;
   }
 
   .cloud12 {
     width: 220px;
-  }
-
-  .cloud13 {
-    width: 190px;
+    top: 10%;
+    left: 30%;
   }
 
   .cloud14 {
     width: 130px;
+    bottom: 30%;
+    left: 60%;
   }
 
-  .cloud15 {
-    width: 110px;
-  }
-
-  /* New clouds on mobile */
   .cloud16 {
     width: 200px;
-  }
-
-  .cloud17 {
-    width: 240px;
+    bottom: -10%;
+    left: 20%;
   }
 
   .cloud18 {
     width: 180px;
-  }
-
-  .cloud19 {
-    width: 160px;
-  }
-
-  .cloud20 {
-    width: 220px;
+    bottom: 10%;
+    right: 10%;
   }
 }

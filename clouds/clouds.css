@@ -1,0 +1,252 @@
+/* This is an optional separate file for cloud styling if you want to use it later */
+
+/* Cloud container - fixed position */
+.cloud-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  /* Allow clicking through clouds */
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Individual cloud styling with SVG images */
+.cloud {
+  position: absolute;
+  width: auto;
+  height: auto;
+  opacity: 0.7;
+}
+
+/* Different cloud sizes, positions, and opacities */
+/* Top clouds - positioned higher */
+.cloud1 {
+  width: 500px;
+  top: 2%;
+  left: 3%;
+  opacity: 0.5;
+}
+
+.cloud2 {
+  width: 550px;
+  top: 1%;
+  right: 5%;
+  opacity: 0.4;
+}
+
+.cloud3 {
+  width: 480px;
+  bottom: 15%;
+  left: 10%;
+  opacity: 0.6;
+}
+
+.cloud4 {
+  width: 450px;
+  bottom: 20%;
+  right: 8%;
+  opacity: 0.7;
+}
+
+.cloud5 {
+  width: 420px;
+  top: 25%;
+  left: 7%;
+  opacity: 0.5;
+}
+
+.cloud6 {
+  width: 600px;
+  top: 15%;
+  right: 2%;
+  opacity: 0.3;
+}
+
+.cloud7 {
+  width: 400px;
+  bottom: 40%;
+  left: 20%;
+  opacity: 0.7;
+}
+
+.cloud8 {
+  width: 550px;
+  bottom: 45%;
+  right: 25%;
+  opacity: 0.2;
+}
+
+.cloud9 {
+  width: 380px;
+  top: 30%;
+  left: 30%;
+  opacity: 0.4;
+}
+
+.cloud10 {
+  width: 420px;
+  top: 5%;
+  left: 45%;
+  opacity: 0.3;
+}
+
+.cloud11 {
+  width: 480px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  opacity: 0.15;
+}
+
+/* Additional clouds */
+.cloud12 {
+  width: 520px;
+  top: 3%;
+  left: 60%;
+  opacity: 0.35;
+}
+
+.cloud13 {
+  width: 580px;
+  top: 60%;
+  right: 15%;
+  opacity: 0.25;
+}
+
+.cloud14 {
+  width: 500px;
+  bottom: 30%;
+  left: 40%;
+  opacity: 0.4;
+}
+
+.cloud15 {
+  width: 450px;
+  top: 70%;
+  right: 40%;
+  opacity: 0.3;
+}
+
+/* New clouds - focused on bottom area */
+.cloud16 {
+  width: 550px;
+  bottom: 5%;
+  left: 5%;
+  opacity: 0.45;
+}
+
+.cloud17 {
+  width: 600px;
+  bottom: 2%;
+  right: 10%;
+  opacity: 0.35;
+}
+
+.cloud18 {
+  width: 520px;
+  bottom: 10%;
+  left: 30%;
+  opacity: 0.4;
+}
+
+.cloud19 {
+  width: 480px;
+  bottom: 8%;
+  right: 35%;
+  opacity: 0.5;
+}
+
+.cloud20 {
+  width: 550px;
+  bottom: 25%;
+  left: 60%;
+  opacity: 0.3;
+}
+
+/* Mobile cloud sizes - slightly bigger than original */
+@media (max-width: 800px) {
+  .cloud1 {
+    width: 220px;
+  }
+
+  .cloud2 {
+    width: 260px;
+  }
+
+  .cloud3 {
+    width: 190px;
+  }
+
+  .cloud4 {
+    width: 160px;
+  }
+
+  .cloud5 {
+    width: 130px;
+  }
+
+  .cloud6 {
+    width: 290px;
+  }
+
+  .cloud7 {
+    width: 110px;
+  }
+
+  .cloud8 {
+    width: 240px;
+  }
+
+  .cloud9 {
+    width: 80px;
+  }
+
+  .cloud10 {
+    width: 100px;
+  }
+
+  .cloud11 {
+    width: 170px;
+  }
+
+  .cloud12 {
+    width: 220px;
+  }
+
+  .cloud13 {
+    width: 190px;
+  }
+
+  .cloud14 {
+    width: 130px;
+  }
+
+  .cloud15 {
+    width: 110px;
+  }
+
+  /* New clouds on mobile */
+  .cloud16 {
+    width: 200px;
+  }
+
+  .cloud17 {
+    width: 240px;
+  }
+
+  .cloud18 {
+    width: 180px;
+  }
+
+  .cloud19 {
+    width: 160px;
+  }
+
+  .cloud20 {
+    width: 220px;
+  }
+}

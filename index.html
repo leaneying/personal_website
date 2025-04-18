@@ -107,123 +107,110 @@
       width: auto;
       height: auto;
       opacity: 0.7;
-      transition: transform 20s ease-in-out;
     }
 
     /* Different cloud sizes, positions, and opacities */
     .cloud1 {
-      width: 280px;
-      /* Increased from 180px */
+      width: 450px;
       top: 8%;
       left: 3%;
       opacity: 0.5;
     }
 
     .cloud2 {
-      width: 320px;
-      /* Increased from 220px */
+      width: 500px;
       top: 10%;
       right: 5%;
       opacity: 0.4;
     }
 
     .cloud3 {
-      width: 250px;
-      /* Increased from 150px */
+      width: 430px;
       bottom: 15%;
       left: 10%;
       opacity: 0.6;
     }
 
     .cloud4 {
-      width: 220px;
-      /* Increased from 120px */
+      width: 400px;
       bottom: 20%;
       right: 8%;
       opacity: 0.7;
     }
 
     .cloud5 {
-      width: 190px;
-      /* Increased from 90px */
+      width: 370px;
       top: 40%;
       left: 7%;
       opacity: 0.5;
     }
 
     .cloud6 {
-      width: 350px;
-      /* Increased from 250px */
+      width: 550px;
       top: 35%;
       right: 2%;
       opacity: 0.3;
     }
 
     .cloud7 {
-      width: 170px;
-      /* Increased from 70px */
+      width: 350px;
       bottom: 40%;
       left: 20%;
       opacity: 0.7;
     }
 
     .cloud8 {
-      width: 300px;
-      /* Increased from 200px */
+      width: 500px;
       bottom: 45%;
       right: 25%;
       opacity: 0.2;
     }
 
     .cloud9 {
-      width: 140px;
-      /* Increased from 40px */
+      width: 320px;
       top: 30%;
       left: 30%;
       opacity: 0.4;
     }
 
     .cloud10 {
-      width: 160px;
-      /* Increased from 60px */
+      width: 370px;
       top: 20%;
       left: 45%;
       opacity: 0.3;
     }
 
     .cloud11 {
-      width: 230px;
-      /* Increased from 130px */
+      width: 430px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -80%);
       opacity: 0.15;
     }
 
-    /* Add styles for new clouds */
     .cloud12 {
-      width: 280px;
+      width: 470px;
       top: 15%;
       left: 60%;
       opacity: 0.35;
     }
 
     .cloud13 {
-      width: 320px;
+      width: 530px;
       top: 60%;
       right: 15%;
       opacity: 0.25;
     }
 
     .cloud14 {
-      width: 240px;
+      width: 450px;
       bottom: 30%;
       left: 40%;
       opacity: 0.4;
     }
 
     .cloud15 {
-      width: 200px;
+      width: 400px;
       top: 70%;
       right: 40%;
       opacity: 0.3;
@@ -482,6 +469,67 @@
         border-right: none;
         animation: none;
       }
+
+      /* Mobile cloud sizes */
+      .cloud1 {
+        width: 180px;
+      }
+
+      .cloud2 {
+        width: 220px;
+      }
+
+      .cloud3 {
+        width: 150px;
+      }
+
+      .cloud4 {
+        width: 120px;
+      }
+
+      .cloud5 {
+        width: 90px;
+      }
+
+      .cloud6 {
+        width: 250px;
+      }
+
+      .cloud7 {
+        width: 70px;
+      }
+
+      .cloud8 {
+        width: 200px;
+      }
+
+      .cloud9 {
+        width: 40px;
+      }
+
+      .cloud10 {
+        width: 60px;
+      }
+
+      .cloud11 {
+        width: 130px;
+      }
+
+      .cloud12 {
+        width: 180px;
+      }
+
+      .cloud13 {
+        width: 150px;
+      }
+
+      .cloud14 {
+        width: 90px;
+      }
+
+      .cloud15 {
+        width: 70px;
+      }
     }
 
     @media (min-width: 801px) {
@@ -622,35 +670,6 @@
       }
     }
 
-    // Function to add subtle floating animation to clouds
-    function animateClouds() {
-      const clouds = document.querySelectorAll('.cloud');
-
-      clouds.forEach((cloud, index) => {
-        // Create random movement values
-        const xMove = (Math.random() * 20) - 10; // -10 to 10px
-        const yMove = (Math.random() * 10) - 5; // -5 to 5px
-        const duration = 15 + (Math.random() * 10); // 15-25s
-        const delay = index * 0.5; // Stagger the animations
-
-        // Apply the animation
-        cloud.style.transition = `transform ${duration}s ease-in-out`;
-        cloud.style.transitionDelay = `${delay}s`;
-        cloud.style.transform = `translate(${xMove}px, ${yMove}px)`;
-
-        // Reset after animation completes to create continuous effect
-        setTimeout(() => {
-          cloud.style.transition = 'none';
-          cloud.style.transform = 'translate(0, 0)';
-
-          // Restart animation after a short delay
-          setTimeout(() => {
-            animateClouds();
-          }, 100);
-        }, (duration + delay) * 1000);
-      });
-    }
-
     window.addEventListener("scroll", () => {
       const sections = document.querySelectorAll("section");
       const navLinks = document.querySelectorAll("nav a");
@@ -688,9 +707,6 @@
 
       // Initialize cloud visibility
       handleCloudVisibility();
-
-      // Start cloud animation
-      animateClouds();
     });
   </script>
 </body>

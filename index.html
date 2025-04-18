@@ -97,6 +97,8 @@
       z-index: 1;
       pointer-events: none;
       /* Allow clicking through clouds */
+      opacity: 1;
+      transition: opacity 0.8s ease-in-out;
     }
 
     /* Individual cloud styling with SVG images */
@@ -110,82 +112,121 @@
 
     /* Different cloud sizes, positions, and opacities */
     .cloud1 {
-      width: 180px;
+      width: 280px;
+      /* Increased from 180px */
       top: 8%;
       left: 3%;
       opacity: 0.5;
     }
 
     .cloud2 {
-      width: 220px;
+      width: 320px;
+      /* Increased from 220px */
       top: 10%;
       right: 5%;
       opacity: 0.4;
     }
 
     .cloud3 {
-      width: 150px;
+      width: 250px;
+      /* Increased from 150px */
       bottom: 15%;
       left: 10%;
       opacity: 0.6;
     }
 
     .cloud4 {
-      width: 120px;
+      width: 220px;
+      /* Increased from 120px */
       bottom: 20%;
       right: 8%;
       opacity: 0.7;
     }
 
     .cloud5 {
-      width: 90px;
+      width: 190px;
+      /* Increased from 90px */
       top: 40%;
       left: 7%;
       opacity: 0.5;
     }
 
     .cloud6 {
-      width: 250px;
+      width: 350px;
+      /* Increased from 250px */
       top: 35%;
       right: 2%;
       opacity: 0.3;
     }
 
     .cloud7 {
-      width: 70px;
+      width: 170px;
+      /* Increased from 70px */
       bottom: 40%;
       left: 20%;
       opacity: 0.7;
     }
 
     .cloud8 {
-      width: 200px;
+      width: 300px;
+      /* Increased from 200px */
       bottom: 45%;
       right: 25%;
       opacity: 0.2;
     }
 
     .cloud9 {
-      width: 40px;
+      width: 140px;
+      /* Increased from 40px */
       top: 30%;
       left: 30%;
       opacity: 0.4;
     }
 
     .cloud10 {
-      width: 60px;
+      width: 160px;
+      /* Increased from 60px */
       top: 20%;
       left: 45%;
       opacity: 0.3;
     }
 
-    /* Small cloud in the center that's very transparent */
     .cloud11 {
-      width: 130px;
+      width: 230px;
+      /* Increased from 130px */
       top: 50%;
       left: 50%;
       transform: translate(-50%, -80%);
       opacity: 0.15;
+    }
+
+    /* Add styles for new clouds */
+    .cloud12 {
+      width: 280px;
+      top: 15%;
+      left: 60%;
+      opacity: 0.35;
+    }
+
+    .cloud13 {
+      width: 320px;
+      top: 60%;
+      right: 15%;
+      opacity: 0.25;
+    }
+
+    .cloud14 {
+      width: 240px;
+      bottom: 30%;
+      left: 40%;
+      opacity: 0.4;
+    }
+
+    .cloud15 {
+      width: 200px;
+      top: 70%;
+      right: 40%;
+      opacity: 0.3;
     }
 
     /* Make header content appear above clouds */
@@ -495,6 +536,10 @@
     <img src="clouds/cloud9.svg" alt="" class="cloud cloud9">
     <img src="clouds/cloud10.svg" alt="" class="cloud cloud10">
     <img src="clouds/cloud11.svg" alt="" class="cloud cloud11">
+    <img src="clouds/cloud1.svg" alt="" class="cloud cloud12">
+    <img src="clouds/cloud3.svg" alt="" class="cloud cloud13">
+    <img src="clouds/cloud5.svg" alt="" class="cloud cloud14">
+    <img src="clouds/cloud7.svg" alt="" class="cloud cloud15">
   </div>
 
   <!-- Hero Section -->
@@ -562,9 +607,18 @@
       const headerBottom = header.offsetTop + header.offsetHeight;
 
       if (window.scrollY > headerBottom) {
-        cloudContainer.style.display = 'none';
+        // Instead of hiding, fade out
+        cloudContainer.style.opacity = '0';
+        // Only disable pointer events after fade out
+        setTimeout(() => {
+          if (parseFloat(cloudContainer.style.opacity) === 0) {
+            cloudContainer.style.pointerEvents = 'none';
+          }
+        }, 800);
       } else {
-        cloudContainer.style.display = 'block';
+        // Make sure pointer events are enabled and fade in
+        cloudContainer.style.pointerEvents = 'none'; // Still none since we want click-through
+        cloudContainer.style.opacity = '1';
       }
     }
 
@@ -575,7 +629,7 @@
       clouds.forEach((cloud, index) => {
         // Create random movement values
         const xMove = (Math.random() * 20) - 10; // -10 to 10px
-        const yMove = (Math.random() * 10) - 5;  // -5 to 5px
+        const yMove = (Math.random() * 10) - 5; // -5 to 5px
         const duration = 15 + (Math.random() * 10); // 15-25s
         const delay = index * 0.5; // Stagger the animations
 

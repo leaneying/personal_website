@@ -8,7 +8,8 @@
   z-index: 1;
   pointer-events: none;
   /* Allow clicking through clouds */
-  /* Removed opacity transition since we're changing the approach */
+  clip-path: inset(0 0 0 0);
+  /* Will be modified by JS to clip clouds */
 }
 
 /* Individual cloud styling with SVG images */
@@ -63,13 +64,12 @@
   opacity: 0.5;
 }
 
-/* Moved from right to bottom */
 .cloud6 {
   width: 600px;
-  bottom: -10%;
-  /* Moved to bottom */
-  left: 30%;
-  /* Positioned horizontally */
+  top: 85%;
+  /* Moved from right side to bottom */
+  left: 65%;
+  /* Positioned toward bottom-right */
   opacity: 0.3;
 }
 
@@ -81,20 +81,20 @@
   opacity: 0.7;
 }
 
-/* Moved from right to bottom */
 .cloud8 {
   width: 550px;
-  bottom: -15%;
-  /* Moved to bottom */
-  left: 5%;
-  /* Positioned horizontally */
+  bottom: 5%;
+  /* Positioned closer to bottom */
+  right: 15%;
+  /* Moved more toward center-right */
   opacity: 0.2;
 }
 
 .cloud9 {
   width: 380px;
   top: 30%;
-  left: 20%;
+  left: 10%;
+  /* Moved more to the left */
   opacity: 0.4;
 }
 
@@ -109,8 +109,8 @@
 .cloud11 {
   width: 480px;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -80%);
+  left: 20%;
+  /* Moved away from center */
   opacity: 0.15;
 }
 
@@ -123,27 +123,28 @@
   opacity: 0.35;
 }
 
-/* Moved from right to bottom */
 .cloud13 {
   width: 580px;
-  bottom: -12%;
+  bottom: 2%;
   /* Moved to bottom */
-  right: 15%;
-  /* Positioned horizontally */
+  left: 35%;
+  /* Positioned toward bottom-center */
   opacity: 0.25;
 }
 
 .cloud14 {
   width: 500px;
   bottom: 30%;
-  left: 25%;
+  left: 15%;
+  /* Moved more to the left */
   opacity: 0.4;
 }
 
 .cloud15 {
   width: 450px;
   top: 70%;
-  right: 25%;
+  right: 15%;
+  /* Moved more to the right */
   opacity: 0.3;
 }
 
@@ -185,6 +186,23 @@
   bottom: 25%;
   left: 40%;
   opacity: 0.3;
+}
+
+/* New additional bottom clouds */
+.cloud21 {
+  position: absolute;
+  width: 520px;
+  bottom: 1%;
+  left: 5%;
+  opacity: 0.4;
+}
+
+.cloud22 {
+  position: absolute;
+  width: 490px;
+  bottom: 3%;
+  right: 28%;
+  opacity: 0.35;
 }
 
 /* Mobile cloud sizes - slightly bigger than original and fewer clouds */

@@ -479,15 +479,20 @@
       const headerBottom = header.offsetTop + header.offsetHeight;
 
       if (window.scrollY > headerBottom) {
-        // Instead of fading, clip the clouds completely
+        // Complete clipping - hide clouds when beyond header
         cloudContainer.style.clipPath = 'inset(0 0 100% 0)';
-      } else {
-        // Calculate how much to clip based on scroll position
-        const scrollProgress = Math.min(1, window.scrollY / headerBottom);
-        const clipAmount = scrollProgress * 100;
+      } else if (window.scrollY > headerBottom - 200) {
+        // Start clipping earlier to prevent the pink bar
+        // This creates a smoother transition zone (200px before the end of header)
+        const transitionRange = 200;
+        const scrollPosition = window.scrollY - (headerBottom - transitionRange);
+        const clipPercentage = (scrollPosition / transitionRange) * 100;
 
-        // Apply clip-path to gradually hide clouds from bottom as you scroll
-        cloudContainer.style.clipPath = `inset(0 0 ${clipAmount}% 0)`;
+        // Apply clip-path with easing to smoothly hide clouds from bottom
+        cloudContainer.style.clipPath = `inset(0 0 ${clipPercentage}% 0)`;
+      } else {
+        // Show clouds fully when at the top of the page
+        cloudContainer.style.clipPath = 'inset(0 0 0% 0)';
       }
     }
 

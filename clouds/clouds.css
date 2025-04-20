@@ -447,7 +447,7 @@
   .cloud20 {
     width: 400px;
     bottom: 1%;
-    left: -22%;
+    left: -32%;
     opacity: 0.45;
   }
 
@@ -462,6 +462,13 @@
     width: 270px;
     top: -1%;
     right: 2%;
+    opacity: 0.6;
+  }
+
+  .cloud29 {
+    width: 270px;
+    bottom: -1%;
+    left: -20%;
     opacity: 0.6;
   }
 }

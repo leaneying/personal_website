@@ -367,7 +367,7 @@ section p {
 }
 
 .heading {
-  margin-bottom: 2rem;
+  margin-top: 3.5rem;
 }
 
 .about-content {
@@ -461,7 +461,7 @@ section p {
     transform: translate(-50%, -59%);
     color: #fff;
     text-align: left;
-    font-size: clamp(0.85rem, 2vw, 1.05rem);
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
     width: 90%;
     font-family: "JetBrains Mono", "Fira Code", "Monaco", "Consolas", monospace;
     line-height: 1.4;

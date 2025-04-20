@@ -19,7 +19,7 @@
     </div>
 
     <a href="#home" class="desktop-link">home</a>
-    <a href="#about me" class="desktop-link">about me</a>
+    <a href="#about-me" class="desktop-link">about me</a>
     <a href="#experience" class="desktop-link">experience</a>
     <a href="#projects" class="desktop-link">projects</a>
     <a href="#handles" class="desktop-link">contact me!</a>
@@ -33,7 +33,7 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="#home" onclick="toggleMenu()">home</a>
-    <a href="#about me" onclick="toggleMenu()">about me</a>
+    <a href="#about-me" onclick="toggleMenu()">about me</a>
     <a href="#experience" onclick="toggleMenu()">experience</a>
     <a href="#projects" onclick="toggleMenu()">projects</a>
     <a href="#handles" onclick="toggleMenu()">contact me!</a>
@@ -91,17 +91,21 @@
   <header id="home">
     <h1>hi, i'm leane!</h1>
     <p>junior at Cornell, user-focused software developer, and horror movie fanatic</p>
-    <div class="scroll-down" onclick="document.getElementById('about me').scrollIntoView({ behavior: 'smooth' });">↓
+    <div class="scroll-down" onclick="document.getElementById('about-me').scrollIntoView({ behavior: 'smooth' });">↓
     </div>
   </header>
 
   <!-- About Me -->
-  <section id="about me">
+  <section id="about-me">
     <div class="heading">
       <p>about me</p>
-      <img src="pics/me_and_cat.png" alt="Me and my cat" />
     </div>
-    <p>#todo</p>
+    <div class="about-container">
+      <div class="about-text">
+        <!-- Fun text can go here later -->
+      </div>
+      <img src="pics/me_and_cat.png" alt="Me and my cat" class="profile-pic" />
+    </div>
   </section>
 
   <!-- Experience -->

@@ -9,212 +9,160 @@
   pointer-events: none;
   opacity: 1;
   transition: opacity 0.8s ease-in-out;
+  overflow: hidden;
+  /* Prevents any overflow issues */
 }
 
 /* Individual cloud styling */
 .cloud {
   position: absolute;
-  width: auto;
-  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
   opacity: 0.7;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-/* ---------------------------- */
-/* DESKTOP CLOUD LAYOUT */
-/* ---------------------------- */
-
-/* Large Anchor Clouds (corners) */
-.cloud1 {
-  width: 500px;
-  top: -5%;
-  left: -8%;
-  opacity: 0.6;
+/* Size classes for better control */
+.cloud.xlarge {
+  width: 400px;
+  height: 200px;
 }
 
-.cloud2 {
-  width: 550px;
-  top: -3%;
-  right: -10%;
-  opacity: 0.5;
+.cloud.large {
+  width: 300px;
+  height: 150px;
 }
 
-.cloud3 {
-  width: 480px;
-  bottom: 10%;
-  left: -12%;
-  opacity: 0.7;
+.cloud.medium {
+  width: 200px;
+  height: 100px;
 }
 
-.cloud4 {
-  width: 450px;
-  bottom: 15%;
-  right: -15%;
-  opacity: 0.6;
+.cloud.small {
+  width: 100px;
+  height: 50px;
 }
 
-/* Medium Supporting Clouds */
-.cloud5 {
-  width: 380px;
-  top: 20%;
+.cloud.tiny {
+  width: 50px;
+  height: 25px;
+}
+
+/* Position classes */
+/* Top-left quadrant */
+.cloud.tl1 {
+  top: 5%;
   left: 5%;
-  opacity: 0.4;
 }
 
-.cloud6 {
-  width: 420px;
+.cloud.tl2 {
+  top: 15%;
+  left: 10%;
+}
+
+.cloud.tl3 {
+  top: 25%;
+  left: 5%;
+}
+
+/* Top-right quadrant */
+.cloud.tr1 {
+  top: 5%;
+  right: 5%;
+}
+
+.cloud.tr2 {
   top: 15%;
   right: 10%;
-  opacity: 0.3;
 }
 
-.cloud7 {
-  width: 350px;
-  bottom: 35%;
-  left: 8%;
-  opacity: 0.5;
+.cloud.tr3 {
+  top: 25%;
+  right: 5%;
 }
 
-.cloud8 {
-  width: 400px;
-  bottom: 40%;
-  right: 12%;
-  opacity: 0.3;
+/* Bottom-left quadrant */
+.cloud.bl1 {
+  bottom: 5%;
+  left: 5%;
 }
 
-/* Small Decorative Clouds */
-.cloud9 {
-  width: 180px;
-  top: 30%;
-  left: 25%;
-  opacity: 0.4;
+.cloud.bl2 {
+  bottom: 15%;
+  left: 10%;
 }
 
-.cloud10 {
-  width: 150px;
-  top: 10%;
-  left: 60%;
-  opacity: 0.3;
+.cloud.bl3 {
+  bottom: 25%;
+  left: 5%;
 }
 
-.cloud11 {
-  width: 200px;
-  top: 70%;
-  left: 30%;
-  opacity: 0.25;
+/* Bottom-right quadrant */
+.cloud.br1 {
+  bottom: 5%;
+  right: 5%;
 }
 
-/* Tiny Accent Clouds (reused SVGs with small sizing) */
-.cloud12 {
-  width: 80px;
-  top: 15%;
-  left: 25%;
-  opacity: 0.25;
+.cloud.br2 {
+  bottom: 15%;
+  right: 10%;
 }
 
-.cloud13 {
-  width: 70px;
-  top: 85%;
-  right: 20%;
-  opacity: 0.3;
+.cloud.br3 {
+  bottom: 25%;
+  right: 5%;
 }
 
-.cloud14 {
-  width: 90px;
-  top: 65%;
-  left: 15%;
-  opacity: 0.2;
+/* Special corner clouds */
+.cloud.corner-tl {
+  top: -50px;
+  left: -50px;
 }
 
-.cloud15 {
-  width: 60px;
-  top: 45%;
-  right: 40%;
-  opacity: 0.15;
+.cloud.corner-tr {
+  top: -50px;
+  right: -50px;
 }
 
-.cloud16 {
-  width: 75px;
-  top: 30%;
-  right: 25%;
-  opacity: 0.2;
+.cloud.corner-bl {
+  bottom: -50px;
+  left: -50px;
 }
 
-/* ---------------------------- */
-/* MOBILE CLOUD LAYOUT */
-/* ---------------------------- */
+.cloud.corner-br {
+  bottom: -50px;
+  right: -50px;
+}
+
+/* Mobile adjustments */
 @media (max-width: 800px) {
-
-  /* Hide some clouds to reduce clutter */
-  .cloud6,
-  .cloud8,
-  .cloud11,
-  .cloud13,
-  .cloud15,
-  .cloud16 {
-    display: none;
-  }
-
-  /* Top clouds */
-  .cloud1 {
-    width: 220px;
-    top: -5%;
-    left: -15%;
-  }
-
-  .cloud2 {
-    width: 180px;
-    top: -3%;
-    right: -10%;
-  }
-
-  .cloud10 {
-    width: 120px;
-    top: 5%;
-    left: 10%;
-  }
-
-  .cloud12 {
-    width: 60px;
-    top: 8%;
-    right: 15%;
-  }
-
-  /* Middle clouds */
-  .cloud5 {
-    width: 150px;
-    top: 25%;
-    left: -5%;
-  }
-
-  .cloud9 {
-    width: 100px;
-    top: 30%;
-    right: 10%;
-  }
-
-  /* Bottom clouds */
-  .cloud3 {
+  .cloud.xlarge {
     width: 200px;
-    bottom: 10%;
-    left: -15%;
+    height: 100px;
   }
 
-  .cloud4 {
-    width: 180px;
-    bottom: 15%;
-    right: -10%;
+  .cloud.large {
+    width: 150px;
+    height: 75px;
   }
 
-  .cloud7 {
-    width: 130px;
-    bottom: 30%;
-    left: 10%;
+  .cloud.medium {
+    width: 100px;
+    height: 50px;
   }
 
-  .cloud14 {
+  .cloud.small {
     width: 50px;
-    bottom: 25%;
-    right: 15%;
+    height: 25px;
+  }
+
+  .cloud.tiny {
+    width: 30px;
+    height: 15px;
+  }
+
+  /* Hide some clouds on mobile */
+  .cloud.mobile-hide {
+    display: none;
   }
 }

@@ -137,6 +137,13 @@ header p {
   transition: transform 0.3s;
 }
 
+@media (max-width: 600px) {
+  .scroll-down {
+    font-size: 3rem;
+    /* Smaller font size on mobile */
+  }
+}
+
 .scroll-down:hover {
   transform: scale(1.2);
 }
@@ -354,24 +361,70 @@ section p {
   }
 }
 
-.about-me {
+#about-me {
+  padding: 1rem 0;
+  max-width: 100%;
+}
+
+.heading {
+  margin-bottom: 2rem;
+  /* Added padding after the "about me" header */
+}
+
+.about-content {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap;
-  padding: 1rem 2rem;
+  flex-wrap: nowrap;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.terminal-screen {
+  position: relative;
+  width: 60%;
+  max-width: none;
+}
+
+.terminal-screen img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: none;
 }
 
 .about-text {
-  flex: 1;
-  min-width: 300px;
+  position: absolute;
+  top: 56%;
+  left: 57%;
+  transform: translate(-60%, -59%);
+  color: #fff;
+  text-align: left;
+  font-size: clamp(0.7rem, 1.8vw, 1.2rem);
+  /* Reduced font size */
+  width: 90%;
+  font-family: "JetBrains Mono", "Fira Code", "Monaco", "Consolas", monospace;
+  line-height: 1.4;
+  /* Slightly tighter line height */
+  white-space: normal;
+  /* Ignore manual line breaks from the HTML */
+  word-wrap: break-word;
+  /* Wrap the text within the container's width */
+  word-break: break-word;
+  /* Optional: helps with very long words that don't naturally break */
+  padding: 0.5rem;
+  /* Added some padding inside */
 }
 
+
 .profile-pic {
-  width: 350px;
-  border-radius: 12px;
+  width: 35%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 20px;
 }
 
 /* Responsive tweak for small screens */

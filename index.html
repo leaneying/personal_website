@@ -75,34 +75,6 @@
       display: none;
     }
 
-    section {
-      position: relative;
-      z-index: 1;
-      /* This is sufficient since clouds are at z-index: -1 */
-      background-color: rgba(252, 251, 244, 0.95);
-      /* Semi-transparent background */
-    }
-
-    /* Also ensure header content is above clouds */
-    header {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Ensure nav stays on top */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      /* This is already high, but making it explicit */
-    }
-
-    /* This catch-all ensures any new content you add later will always be above clouds */
-    body>* {
-      position: relative;
-      z-index: 1;
-    }
-
     /* Header section */
     header {
       min-height: 100vh;
@@ -507,20 +479,15 @@
       const headerBottom = header.offsetTop + header.offsetHeight;
 
       if (window.scrollY > headerBottom) {
-        // Complete clipping - hide clouds when beyond header
+        // Instead of fading, clip the clouds completely
         cloudContainer.style.clipPath = 'inset(0 0 100% 0)';
-      } else if (window.scrollY > headerBottom - 200) {
-        // Start clipping earlier to prevent the pink bar
-        // This creates a smoother transition zone (200px before the end of header)
-        const transitionRange = 200;
-        const scrollPosition = window.scrollY - (headerBottom - transitionRange);
-        const clipPercentage = (scrollPosition / transitionRange) * 100;
-
-        // Apply clip-path with easing to smoothly hide clouds from bottom
-        cloudContainer.style.clipPath = `inset(0 0 ${clipPercentage}% 0)`;
       } else {
-        // Show clouds fully when at the top of the page
-        cloudContainer.style.clipPath = 'inset(0 0 0% 0)';
+        // Calculate how much to clip based on scroll position
+        const scrollProgress = Math.min(1, window.scrollY / headerBottom);
+        const clipAmount = scrollProgress * 100;
+
+        // Apply clip-path to gradually hide clouds from bottom as you scroll
+        cloudContainer.style.clipPath = `inset(0 0 ${clipAmount}% 0)`;
       }
     }
 

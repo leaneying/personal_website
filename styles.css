@@ -427,8 +427,58 @@ section p {
   display: block;
 }
 
+.about-text-medium {
+  display: none;
+}
+
+/* Medium-large screens (1025px - 1280px): just decrease font size slightly */
+@media (min-width: 1025px) and (max-width: 1600px) {
+  .about-text {
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    line-height: 1;
+  }
+
+  .about-text-mobile {
+    font-size: clamp(0.7rem, 1.3vw, 1rem);
+  }
+
+  .profile-pic {
+    width: 32%;
+  }
+}
+
+/* Responsive tweak for medium screens (tablets, small laptops) */
+@media (max-width: 1100px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .terminal-screen {
+    width: 100%;
+  }
+
+  .about-text {
+    left: 50%;
+    transform: translate(-50%, -59%);
+    font-size: clamp(0.75rem, 1.85vw, 1.25rem);
+    width: 90%;
+    text-align: left;
+  }
+
+  .profile-pic {
+    width: 70%;
+    max-width: 300px;
+    margin-top: 0.5rem;
+  }
+}
+
+
 /* Responsive tweak for small screens */
-@media (max-width: 768px) {
+@media (max-width: 650px) {
   .about-content {
     flex-direction: column;
     align-items: center;

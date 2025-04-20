@@ -300,8 +300,7 @@
   .cloud15,
   .cloud17,
   .cloud18,
-  .cloud22,
-  .cloud23 {
+  .cloud20 {
     display: none;
   }
 
@@ -439,9 +438,9 @@
 
   .cloud19 {
     width: 340px;
-    bottom: -6%;
+    bottom: -10%;
     left: -15%;
-    opacity: 0.35;
+    opacity: 0.5;
   }
 
   .cloud20 {
@@ -449,6 +448,17 @@
     bottom: 1%;
     left: -32%;
     opacity: 0.45;
+  }
+
+  .cloud21 {
+    opacity: 0.15;
+  }
+
+  .cloud22 {
+    width: 480px;
+    top: 60%;
+    left: 25%;
+    opacity: 0.5;
   }
 
   .cloud25 {
@@ -466,9 +476,9 @@
   }
 
   .cloud29 {
-    width: 270px;
-    bottom: -1%;
-    left: -25%;
+    width: 170px;
+    bottom: 9%;
+    left: -5%;
     opacity: 0.6;
   }
 }

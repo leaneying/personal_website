@@ -368,7 +368,6 @@ section p {
 
 .heading {
   margin-bottom: 2rem;
-  /* Added padding after the "about me" header */
 }
 
 .about-content {
@@ -429,14 +428,27 @@ section p {
 
 /* Responsive tweak for small screens */
 @media (max-width: 768px) {
-  .about-me {
-    flex-direction: column-reverse;
+  .about-content {
+    flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
+  .terminal-screen {
+    width: 100%;
+  }
+
+  .about-text {
+    left: 50%;
+    transform: translate(-50%, -59%);
+    text-align: center;
+    width: 90%;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+  }
+
   .profile-pic {
-    width: 130px;
+    width: 70%;
+    max-width: 250px;
     margin-top: 1rem;
   }
 }

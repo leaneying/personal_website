@@ -302,8 +302,6 @@
   .cloud15,
   .cloud17,
   .cloud18,
-  .cloud19,
-  .cloud20,
   .cloud22,
   .cloud23,
   .cloud24,
@@ -420,7 +418,7 @@
 
   .cloud16 {
     width: 180px;
-    bottom: -10%;
+    bottom: -15%;
     /* Raised the bottom clouds */
     left: 20%;
   }
@@ -466,4 +464,19 @@
     /* Raised the bottom clouds */
     right: 10%;
   }
+
+  .cloud19 {
+    width: 140px;
+    bottom: 6%;
+    left: 12%;
+    opacity: 0.35;
+  }
+
+  .cloud20 {
+    width: 180px;
+    bottom: 18%;
+    left: 22%;
+    opacity: 0.25;
+  }
+
 }

@@ -374,7 +374,7 @@
   .cloud3 {
     width: 160px;
     bottom: -2%;
-    left: -15%;
+    left: -25%;
   }
 
   .cloud4 {
@@ -386,7 +386,7 @@
   .cloud7 {
     width: 120px;
     bottom: -4%;
-    left: -5%;
+    left: -15%;
   }
 
   .cloud14 {
@@ -416,7 +416,7 @@
   .cloud28 {
     width: 250px;
     bottom: -12%;
-    left: -10%;
+    left: -15%;
   }
 
   .cloud30 {
@@ -440,7 +440,7 @@
   .cloud19 {
     width: 340px;
     bottom: -6%;
-    left: -10%;
+    left: -15%;
     opacity: 0.35;
   }
 
@@ -454,7 +454,7 @@
   .cloud25 {
     width: 270px;
     top: -1%;
-    left: 2%;
+    left: -10%;
     opacity: 0.7;
   }
 
@@ -468,7 +468,7 @@
   .cloud29 {
     width: 270px;
     bottom: -1%;
-    left: -20%;
+    left: -25%;
     opacity: 0.6;
   }
 }

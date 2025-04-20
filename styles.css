@@ -461,7 +461,7 @@ section p {
     transform: translate(-50%, -59%);
     color: #fff;
     text-align: left;
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-size: clamp(0.7rem, 1.4vw, 0.9rem);
     width: 90%;
     font-family: "JetBrains Mono", "Fira Code", "Monaco", "Consolas", monospace;
     line-height: 1.4;

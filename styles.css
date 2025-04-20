@@ -397,7 +397,7 @@ section p {
 
 .about-text {
   position: absolute;
-  top: 59%;
+  top: 61%;
   left: 59%;
   transform: translate(-60%, -59%);
   color: #fff;
@@ -439,11 +439,11 @@ section p {
   }
 
   .about-text-mobile {
-    font-size: clamp(0.7rem, 1.3vw, 1rem);
+    font-size: clamp(0.6rem, 1.2vw, 0.9rem);
   }
 
   .profile-pic {
-    width: 32%;
+    width: 30%;
   }
 }
 
@@ -461,10 +461,10 @@ section p {
     width: 100%;
   }
 
-  .about-text {
+  .about-text-medium {
     left: 50%;
     transform: translate(-50%, -59%);
-    font-size: clamp(0.75rem, 1.85vw, 1.25rem);
+    font-size: clamp(0.7rem, 1.8vw, 1.20rem);
     width: 90%;
     text-align: left;
   }

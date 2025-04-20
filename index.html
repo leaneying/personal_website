@@ -20,6 +20,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #fcfbf4;
       color: #333;
+      position: relative;
     }
 
     nav {
@@ -89,6 +90,18 @@
       position: relative;
     }
 
+    /* Content sections - add a higher z-index and background to create the "behind" effect */
+    section {
+      position: relative;
+      z-index: 10;
+      /* Higher than clouds */
+      background: #fcfbf4;
+      /* Same as body background */
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
     /* Make header content appear above clouds */
     header h1,
     header p,
@@ -141,12 +154,6 @@
 
     .scroll-down:hover {
       transform: scale(1.2);
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: auto;
     }
 
     section h2 {
@@ -309,6 +316,18 @@
       margin-left: 10px;
     }
 
+    /* Section background overlay to create the "behind" effect */
+    .section-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fcfbf4;
+      z-index: 5;
+      /* Higher than clouds but lower than section content */
+    }
+
     @media (max-width: 800px) {
       nav {
         justify-content: space-between;
@@ -424,6 +443,7 @@
 
   <!-- About Me -->
   <section id="about me">
+    <div class="section-background"></div>
     <div class="heading">
       <p>about me</p>
     </div>
@@ -432,6 +452,7 @@
 
   <!-- Experience -->
   <section id="experience">
+    <div class="section-background"></div>
     <div class="heading">
       <p>experience</p>
     </div>
@@ -440,6 +461,7 @@
 
   <!-- Projects -->
   <section id="projects">
+    <div class="section-background"></div>
     <div class="heading">
       <p>projects</p>
     </div>
@@ -448,6 +470,7 @@
 
   <!-- Contact -->
   <section id="handles">
+    <div class="section-background"></div>
     <div class="heading">
       <p>reach me at:</p>
     </div>
@@ -472,24 +495,8 @@
       menu.classList.toggle('show');
     }
 
-    // Function to handle cloud visibility based on scroll position
-    function handleCloudVisibility() {
-      const header = document.getElementById('home');
-      const cloudContainer = document.getElementById('cloudContainer');
-      const headerBottom = header.offsetTop + header.offsetHeight;
-
-      if (window.scrollY > headerBottom) {
-        // Instead of fading, clip the clouds completely
-        cloudContainer.style.clipPath = 'inset(0 0 100% 0)';
-      } else {
-        // Calculate how much to clip based on scroll position
-        const scrollProgress = Math.min(1, window.scrollY / headerBottom);
-        const clipAmount = scrollProgress * 100;
-
-        // Apply clip-path to gradually hide clouds from bottom as you scroll
-        cloudContainer.style.clipPath = `inset(0 0 ${clipAmount}% 0)`;
-      }
-    }
+    // No need for the handleCloudVisibility function anymore
+    // The clouds will naturally appear behind the sections due to z-index
 
     window.addEventListener("scroll", () => {
       const sections = document.querySelectorAll("section");
@@ -517,32 +524,13 @@
       if (mobileHeader) {
         mobileHeader.textContent = current;
       }
-
-      // Handle cloud visibility
-      handleCloudVisibility();
     });
 
     window.addEventListener("load", () => {
       const mobileHeader = document.getElementById("mobileHeader");
       if (mobileHeader) mobileHeader.textContent = "home";
-
-      // Initialize cloud visibility
-      handleCloudVisibility();
-
-      // Create and add new cloud elements
-      const cloudContainer = document.getElementById('cloudContainer');
-
-      // Create and add new cloud elements
-      const cloud21 = document.createElement('img');
-      cloud21.src = 'clouds/cloud3.svg';
-      cloud21.alt = '';
-      cloud21.className = 'cloud cloud21';
-      cloudContainer.appendChild(cloud21);
-
-      const cloud22 = document.createElement('img');
-      cloud22.src = 'clouds/cloud1.svg';
-      cloud22.alt = '';
-      cloud22.className = 'cloud cloud22';
-      cloudContainer.appendChild(cloud22);
     });
   </script>
+</body>
+
+</html>

@@ -6,7 +6,6 @@
   width: 100%;
   height: 100vh;
   z-index: 1;
-  /* Between header background (0) and content (2) */
   pointer-events: none;
   opacity: 1;
   transition: opacity 0.8s ease-in-out;
@@ -20,8 +19,7 @@
   opacity: 0.7;
 }
 
-/* Different cloud sizes, positions, and opacities */
-/* Top clouds - positioned higher and more spread out */
+/* Top clouds */
 .cloud1 {
   width: 500px;
   top: -2%;
@@ -176,6 +174,7 @@
   transform: scaleX(-1);
 }
 
+/* Smaller clouds */
 .cloud22 {
   width: 250px;
   top: 10%;
@@ -291,10 +290,9 @@
   opacity: 0.70;
 }
 
-/* Mobile cloud sizes - slightly bigger than original and fewer clouds */
+/* Mobile cloud sizes - fewer clouds */
 @media (max-width: 800px) {
 
-  /* Further reduce visible clouds for clarity */
   .cloud2,
   .cloud5,
   .cloud11,
@@ -303,180 +301,167 @@
   .cloud17,
   .cloud18,
   .cloud22,
-  .cloud23,
-  .cloud24,
-  .cloud25 {
+  .cloud23 {
     display: none;
   }
 
-  /* Top clouds – make them lower */
   .cloud1 {
     width: 240px;
     top: 10%;
-    /* Lowered the top clouds */
     left: -10%;
   }
 
   .cloud6 {
     width: 260px;
     top: 5%;
-    /* Lowered the top clouds */
     right: -15%;
   }
 
   .cloud8 {
     width: 220px;
     top: 5%;
-    /* Lowered the top clouds */
     right: -10%;
   }
 
   .cloud9 {
     width: 90px;
     top: 15%;
-    /* Lowered the top clouds */
     left: 75%;
   }
 
   .cloud10 {
     width: 130px;
     top: 10%;
-    /* Lowered the top clouds */
     left: 55%;
   }
 
   .cloud12 {
     width: 200px;
     top: 3%;
-    /* Lowered the top clouds */
     left: 30%;
   }
 
   .cloud33 {
     width: 200px;
     top: 5%;
-    /* Lowered the top clouds */
     left: -12%;
   }
 
   .cloud34 {
     width: 180px;
     top: 6%;
-    /* Lowered the top clouds */
     right: -10%;
   }
 
   .cloud35 {
     width: 220px;
     top: -5%;
-    /* Lowered the top clouds */
     right: 15%;
   }
 
   .cloud36 {
     width: 240px;
     top: -7%;
-    /* Lowered the top clouds */
     left: 18%;
   }
 
   .cloud37 {
     width: 150px;
     top: 15%;
-    /* Lowered the top clouds */
     right: 5%;
   }
 
-  /* Bottom clouds – make them higher */
   .cloud3 {
     width: 160px;
     bottom: -2%;
-    /* Raised the bottom clouds */
     left: -15%;
   }
 
   .cloud4 {
     width: 150px;
     bottom: -5%;
-    /* Raised the bottom clouds */
     right: -10%;
   }
 
   .cloud7 {
     width: 120px;
     bottom: -4%;
-    /* Raised the bottom clouds */
-    left: 5%;
+    left: -5%;
   }
 
   .cloud14 {
     width: 120px;
     bottom: -5%;
-    /* Raised the bottom clouds */
-    left: 60%;
+    left: 30%;
   }
 
   .cloud16 {
     width: 180px;
     bottom: -15%;
-    /* Raised the bottom clouds */
     left: 20%;
   }
 
   .cloud26 {
     width: 180px;
     bottom: -8%;
-    /* Raised the bottom clouds */
     right: 0%;
   }
 
   .cloud27 {
     width: 200px;
     bottom: -5%;
-    /* Raised the bottom clouds */
     right: -5%;
   }
 
   .cloud28 {
     width: 250px;
     bottom: -12%;
-    /* Raised the bottom clouds */
     left: -10%;
   }
 
   .cloud30 {
     width: 120px;
     bottom: -5%;
-    /* Raised the bottom clouds */
     left: 20%;
   }
 
   .cloud31 {
     width: 120px;
     bottom: -7%;
-    /* Raised the bottom clouds */
     right: 15%;
   }
 
   .cloud32 {
     width: 280px;
     bottom: -12%;
-    /* Raised the bottom clouds */
     right: 10%;
   }
 
   .cloud19 {
-    width: 140px;
-    bottom: 6%;
-    left: 12%;
+    width: 340px;
+    bottom: -6%;
+    left: -10%;
     opacity: 0.35;
   }
 
   .cloud20 {
-    width: 180px;
-    bottom: 18%;
-    left: 22%;
-    opacity: 0.25;
+    width: 400px;
+    bottom: 1%;
+    left: -22%;
+    opacity: 0.45;
   }
 
+  .cloud25 {
+    width: 270px;
+    top: -1%;
+    left: 2%;
+    opacity: 0.7;
+  }
+
+  .cloud24 {
+    width: 270px;
+    top: -1%;
+    right: 2%;
+    opacity: 0.6;
+  }
 }

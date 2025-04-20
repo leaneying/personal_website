@@ -397,27 +397,20 @@ section p {
 
 .about-text {
   position: absolute;
-  top: 56%;
-  left: 57%;
+  top: 59%;
+  left: 59%;
   transform: translate(-60%, -59%);
   color: #fff;
   text-align: left;
-  font-size: clamp(0.7rem, 1.8vw, 1.2rem);
-  /* Reduced font size */
+  font-size: clamp(0.8rem, 1.9vw, 1.3rem);
   width: 90%;
   font-family: "JetBrains Mono", "Fira Code", "Monaco", "Consolas", monospace;
   line-height: 1.4;
-  /* Slightly tighter line height */
   white-space: normal;
-  /* Ignore manual line breaks from the HTML */
   word-wrap: break-word;
-  /* Wrap the text within the container's width */
   word-break: break-word;
-  /* Optional: helps with very long words that don't naturally break */
   padding: 0.5rem;
-  /* Added some padding inside */
 }
-
 
 .profile-pic {
   width: 35%;
@@ -426,29 +419,61 @@ section p {
   border-radius: 20px;
 }
 
+.about-text-mobile {
+  display: none;
+}
+
+.about-text-desktop {
+  display: block;
+}
+
 /* Responsive tweak for small screens */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 1rem;
   }
 
   .terminal-screen {
     width: 100%;
   }
 
+  /* Adjusts the shared about-text styles */
   .about-text {
     left: 50%;
     transform: translate(-50%, -59%);
-    text-align: center;
+    text-align: left;
     width: 90%;
     font-size: clamp(0.8rem, 2vw, 1.1rem);
   }
 
+  .about-text-desktop {
+    display: none;
+  }
+
+  .about-text-mobile {
+    display: block;
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -59%);
+    color: #fff;
+    text-align: left;
+    font-size: clamp(0.85rem, 2vw, 1.05rem);
+    width: 90%;
+    font-family: "JetBrains Mono", "Fira Code", "Monaco", "Consolas", monospace;
+    line-height: 1.4;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    padding: 0.5rem;
+  }
+
   .profile-pic {
-    width: 70%;
-    max-width: 250px;
-    margin-top: 1rem;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 0.5rem;
   }
 }

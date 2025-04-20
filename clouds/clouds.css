@@ -8,10 +8,11 @@
   z-index: 1;
   pointer-events: none;
   clip-path: inset(0 0 0 0);
-  transition: clip-path 0.3s ease, opacity 0.3s ease;
-  /* Add smooth transition */
+  will-change: clip-path;
+  /* Optimize for performance */
   background: transparent;
-  /* Ensure no background color */
+  overflow: hidden;
+  /* Ensure no bleed-through */
 }
 
 /* Individual cloud styling with SVG images */

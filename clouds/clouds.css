@@ -6,8 +6,8 @@
   width: 100%;
   height: 100vh;
   z-index: 1;
+  /* Between header background (0) and content (2) */
   pointer-events: none;
-  /* Allow clicking through clouds */
   opacity: 1;
   transition: opacity 0.8s ease-in-out;
 }
@@ -25,18 +25,14 @@
 .cloud1 {
   width: 500px;
   top: -2%;
-  /* Moved higher, partially off-screen */
   left: -5%;
-  /* Moved more left, partially off-screen */
   opacity: 0.5;
 }
 
 .cloud2 {
   width: 550px;
   top: -3%;
-  /* Moved higher, partially off-screen */
   right: -8%;
-  /* Moved more right, partially off-screen */
   opacity: 0.4;
 }
 
@@ -44,7 +40,6 @@
   width: 480px;
   bottom: 15%;
   left: -8%;
-  /* Moved more left, partially off-screen */
   opacity: 0.6;
 }
 
@@ -52,7 +47,6 @@
   width: 450px;
   bottom: 20%;
   right: -10%;
-  /* Moved more right, partially off-screen */
   opacity: 0.7;
 }
 
@@ -60,7 +54,6 @@
   width: 420px;
   top: 25%;
   left: -12%;
-  /* Moved more left, partially off-screen */
   opacity: 0.5;
 }
 
@@ -68,7 +61,6 @@
   width: 600px;
   top: 15%;
   right: -15%;
-  /* Moved more right, partially off-screen */
   opacity: 0.3;
 }
 
@@ -76,7 +68,6 @@
   width: 400px;
   bottom: 40%;
   left: -5%;
-  /* Moved more left, partially off-screen */
   opacity: 0.7;
 }
 
@@ -84,7 +75,6 @@
   width: 550px;
   bottom: 45%;
   right: -12%;
-  /* Moved more right, partially off-screen */
   opacity: 0.2;
 }
 
@@ -98,7 +88,6 @@
 .cloud10 {
   width: 420px;
   top: -5%;
-  /* Moved higher, partially off-screen */
   left: 35%;
   opacity: 0.3;
 }
@@ -115,7 +104,6 @@
 .cloud12 {
   width: 520px;
   top: -4%;
-  /* Moved higher, partially off-screen */
   left: 60%;
   opacity: 0.35;
 }
@@ -124,7 +112,6 @@
   width: 580px;
   top: 60%;
   right: -18%;
-  /* Moved more right, partially off-screen */
   opacity: 0.25;
 }
 
@@ -146,18 +133,14 @@
 .cloud16 {
   width: 550px;
   bottom: -5%;
-  /* Moved lower, partially off-screen */
   left: -10%;
-  /* Moved more left, partially off-screen */
   opacity: 0.45;
 }
 
 .cloud17 {
   width: 600px;
   bottom: -8%;
-  /* Moved lower, partially off-screen */
   right: -15%;
-  /* Moved more right, partially off-screen */
   opacity: 0.35;
 }
 

@@ -75,6 +75,34 @@
       display: none;
     }
 
+    section {
+      position: relative;
+      z-index: 1;
+      /* This is sufficient since clouds are at z-index: -1 */
+      background-color: rgba(252, 251, 244, 0.95);
+      /* Semi-transparent background */
+    }
+
+    /* Also ensure header content is above clouds */
+    header {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Ensure nav stays on top */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      /* This is already high, but making it explicit */
+    }
+
+    /* This catch-all ensures any new content you add later will always be above clouds */
+    body>* {
+      position: relative;
+      z-index: 1;
+    }
+
     /* Header section */
     header {
       min-height: 100vh;

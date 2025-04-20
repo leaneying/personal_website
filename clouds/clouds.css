@@ -8,7 +8,8 @@
   z-index: 1;
   pointer-events: none;
   /* Allow clicking through clouds */
-  /* Removed opacity transition since we're changing the approach */
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
 }
 
 /* Individual cloud styling with SVG images */
@@ -63,13 +64,11 @@
   opacity: 0.5;
 }
 
-/* Moved from right to bottom */
 .cloud6 {
   width: 600px;
-  bottom: -10%;
-  /* Moved to bottom */
-  left: 30%;
-  /* Positioned horizontally */
+  top: 15%;
+  right: -15%;
+  /* Moved more right, partially off-screen */
   opacity: 0.3;
 }
 
@@ -81,13 +80,11 @@
   opacity: 0.7;
 }
 
-/* Moved from right to bottom */
 .cloud8 {
   width: 550px;
-  bottom: -15%;
-  /* Moved to bottom */
-  left: 5%;
-  /* Positioned horizontally */
+  bottom: 45%;
+  right: -12%;
+  /* Moved more right, partially off-screen */
   opacity: 0.2;
 }
 
@@ -123,13 +120,11 @@
   opacity: 0.35;
 }
 
-/* Moved from right to bottom */
 .cloud13 {
   width: 580px;
-  bottom: -12%;
-  /* Moved to bottom */
-  right: 15%;
-  /* Positioned horizontally */
+  top: 60%;
+  right: -18%;
+  /* Moved more right, partially off-screen */
   opacity: 0.25;
 }
 
@@ -233,8 +228,8 @@
 
   .cloud6 {
     width: 290px;
-    bottom: -10%;
-    left: 30%;
+    top: 15%;
+    right: -20%;
   }
 
   .cloud7 {
@@ -245,8 +240,8 @@
 
   .cloud8 {
     width: 240px;
-    bottom: -15%;
-    left: 5%;
+    bottom: 45%;
+    right: -15%;
   }
 
   .cloud9 {

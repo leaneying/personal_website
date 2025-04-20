@@ -7,9 +7,11 @@
   height: 100vh;
   z-index: 1;
   pointer-events: none;
-  /* Allow clicking through clouds */
   clip-path: inset(0 0 0 0);
-  /* Will be modified by JS to clip clouds */
+  transition: clip-path 0.3s ease, opacity 0.3s ease;
+  /* Add smooth transition */
+  background: transparent;
+  /* Ensure no background color */
 }
 
 /* Individual cloud styling with SVG images */
@@ -207,6 +209,9 @@
 
 /* Mobile cloud sizes - slightly bigger than original and fewer clouds */
 @media (max-width: 800px) {
+  .cloud-container {
+    height: 100vh;
+  }
 
   /* Hide some clouds on mobile to reduce clutter */
   .cloud11,

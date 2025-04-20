@@ -27,12 +27,13 @@
   top: -2%;
   left: -5%;
   opacity: 0.5;
+  transform: scaleX(-1);
 }
 
 .cloud2 {
   width: 550px;
   top: -3%;
-  right: -8%;
+  right: 5%;
   opacity: 0.4;
 }
 
@@ -52,23 +53,24 @@
 
 .cloud5 {
   width: 420px;
-  top: 25%;
+  top: 5%;
   left: -12%;
-  opacity: 0.5;
+  opacity: 0.2;
+  transform: scaleX(-1);
 }
 
 .cloud6 {
-  width: 600px;
-  top: 15%;
+  width: 500px;
+  top: 5%;
   right: -15%;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .cloud7 {
-  width: 400px;
-  bottom: 40%;
-  left: -5%;
-  opacity: 0.7;
+  width: 500px;
+  bottom: -40%;
+  left: 20%;
+  opacity: 0.5;
 }
 
 .cloud8 {
@@ -80,9 +82,9 @@
 
 .cloud9 {
   width: 380px;
-  top: 30%;
+  top: 10%;
   left: 20%;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .cloud10 {
@@ -90,14 +92,15 @@
   top: -5%;
   left: 35%;
   opacity: 0.3;
+  transform: scaleX(-1);
 }
 
 .cloud11 {
   width: 480px;
-  top: 50%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, -80%);
-  opacity: 0.15;
+  opacity: 0.1;
 }
 
 /* Additional clouds */
@@ -105,70 +108,194 @@
   width: 520px;
   top: -4%;
   left: 60%;
-  opacity: 0.35;
+  opacity: 0.3;
 }
 
 .cloud13 {
   width: 580px;
-  top: 60%;
+  top: 10%;
   right: -18%;
   opacity: 0.25;
 }
 
 .cloud14 {
   width: 500px;
-  bottom: 30%;
-  left: 25%;
+  top: -10%;
+  left: 5%;
   opacity: 0.4;
 }
 
 .cloud15 {
   width: 450px;
   top: 70%;
-  right: 25%;
+  right: 15%;
   opacity: 0.3;
+  transform: scaleX(-1);
 }
 
-/* New clouds - focused on bottom area and more spread out */
 .cloud16 {
   width: 550px;
   bottom: -5%;
   left: -10%;
-  opacity: 0.45;
+  opacity: 0.25;
 }
 
 .cloud17 {
-  width: 600px;
-  bottom: -8%;
+  width: 800px;
+  bottom: -40%;
   right: -15%;
   opacity: 0.35;
 }
 
 .cloud18 {
-  width: 520px;
-  bottom: 10%;
-  left: 15%;
-  opacity: 0.4;
+  width: 620px;
+  bottom: 0%;
+  left: 8%;
+  opacity: 0.15;
 }
 
 .cloud19 {
   width: 480px;
   bottom: 8%;
   right: 20%;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 .cloud20 {
   width: 550px;
   bottom: 25%;
   left: 40%;
+  opacity: 0.1;
+}
+
+.cloud21 {
+  width: 650px;
+  bottom: -25%;
+  left: 0%;
   opacity: 0.3;
+  transform: scaleX(-1);
+}
+
+.cloud22 {
+  width: 250px;
+  top: 10%;
+  left: 10%;
+  opacity: 0.7;
+}
+
+.cloud23 {
+  width: 250px;
+  top: 15%;
+  left: 5%;
+  opacity: 0.6;
+}
+
+.cloud24 {
+  width: 250px;
+  top: 0%;
+  right: 5%;
+  opacity: 0.8;
+}
+
+.cloud25 {
+  width: 150px;
+  top: 30%;
+  right: 10%;
+  opacity: 0.9;
+}
+
+.cloud26 {
+  width: 350px;
+  bottom: 14%;
+  right: 0%;
+  opacity: 0.2;
+}
+
+.cloud27 {
+  width: 450px;
+  bottom: -8%;
+  right: -1%;
+  opacity: 0.4;
+}
+
+.cloud28 {
+  width: 950px;
+  bottom: -50%;
+  left: -20%;
+  opacity: 0.3;
+  transform: scaleX(-1);
+}
+
+.cloud29 {
+  width: 170px;
+  bottom: 20%;
+  left: 11%;
+  opacity: 0.65;
+}
+
+.cloud30 {
+  width: 200px;
+  bottom: 6%;
+  left: 21%;
+  opacity: 0.65;
+}
+
+.cloud31 {
+  width: 200px;
+  bottom: 8%;
+  right: 19%;
+  opacity: 0.65;
+}
+
+.cloud32 {
+  width: 900px;
+  bottom: -50%;
+  right: 19%;
+  opacity: 0.25;
+}
+
+.cloud33 {
+  width: 700px;
+  top: 9%;
+  left: -13%;
+  opacity: 0.55;
+  transform: scaleX(-1);
+}
+
+.cloud34 {
+  width: 400px;
+  top: 4%;
+  right: -13%;
+  opacity: 0.65;
+  transform: scaleX(-1);
+}
+
+.cloud35 {
+  width: 500px;
+  top: -11%;
+  right: 23%;
+  opacity: 0.55;
+}
+
+.cloud36 {
+  width: 500px;
+  top: -15%;
+  left: 18%;
+  opacity: 0.70;
+}
+
+.cloud37 {
+  width: 200px;
+  top: 11%;
+  right: 24%;
+  opacity: 0.70;
 }
 
 /* Mobile cloud sizes - slightly bigger than original and fewer clouds */
 @media (max-width: 800px) {
 
   /* Hide some clouds on mobile to reduce clutter */
+  .cloud2,
   .cloud11,
   .cloud13,
   .cloud15,
@@ -183,12 +310,6 @@
     width: 220px;
     top: -5%;
     left: -10%;
-  }
-
-  .cloud2 {
-    width: 260px;
-    top: -3%;
-    right: -15%;
   }
 
   .cloud3 {

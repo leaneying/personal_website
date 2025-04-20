@@ -24,7 +24,7 @@
 /* DESKTOP CLOUD LAYOUT */
 /* ---------------------------- */
 
-/* Large decorative clouds */
+/* Large Anchor Clouds (corners) */
 .cloud1 {
   width: 500px;
   top: -5%;
@@ -53,7 +53,7 @@
   opacity: 0.6;
 }
 
-/* Medium clouds */
+/* Medium Supporting Clouds */
 .cloud5 {
   width: 380px;
   top: 20%;
@@ -82,9 +82,9 @@
   opacity: 0.3;
 }
 
-/* Small clouds - scattered throughout */
+/* Small Decorative Clouds */
 .cloud9 {
-  width: 120px;
+  width: 180px;
   top: 30%;
   left: 25%;
   opacity: 0.4;
@@ -98,73 +98,45 @@
 }
 
 .cloud11 {
-  width: 180px;
+  width: 200px;
   top: 70%;
   left: 30%;
   opacity: 0.25;
 }
 
+/* Tiny Accent Clouds (reused SVGs with small sizing) */
 .cloud12 {
-  width: 130px;
-  top: 80%;
-  right: 25%;
-  opacity: 0.35;
-}
-
-/* Tiny clouds - subtle background elements */
-.cloud13 {
   width: 80px;
-  top: 5%;
-  left: 20%;
-  opacity: 0.2;
-}
-
-.cloud14 {
-  width: 90px;
-  top: 85%;
-  right: 15%;
+  top: 15%;
+  left: 25%;
   opacity: 0.25;
 }
 
-.cloud15 {
+.cloud13 {
   width: 70px;
-  top: 65%;
-  left: 15%;
-  opacity: 0.15;
-}
-
-.cloud16 {
-  width: 100px;
-  top: 25%;
-  right: 30%;
-  opacity: 0.2;
-}
-
-.cloud17 {
-  width: 60px;
-  top: 45%;
-  left: 40%;
-  opacity: 0.15;
-}
-
-.cloud18 {
-  width: 110px;
-  top: 55%;
+  top: 85%;
   right: 20%;
   opacity: 0.3;
 }
 
-.cloud19 {
-  width: 85px;
-  top: 75%;
-  left: 35%;
-  opacity: 0.25;
+.cloud14 {
+  width: 90px;
+  top: 65%;
+  left: 15%;
+  opacity: 0.2;
 }
 
-.cloud20 {
-  width: 95px;
-  top: 15%;
+.cloud15 {
+  width: 60px;
+  top: 45%;
   right: 40%;
+  opacity: 0.15;
+}
+
+.cloud16 {
+  width: 75px;
+  top: 30%;
+  right: 25%;
   opacity: 0.2;
 }
 
@@ -179,9 +151,7 @@
   .cloud11,
   .cloud13,
   .cloud15,
-  .cloud17,
-  .cloud19,
-  .cloud20 {
+  .cloud16 {
     display: none;
   }
 
@@ -204,8 +174,8 @@
     left: 10%;
   }
 
-  .cloud16 {
-    width: 90px;
+  .cloud12 {
+    width: 60px;
     top: 8%;
     right: 15%;
   }
@@ -242,21 +212,9 @@
     left: 10%;
   }
 
-  .cloud12 {
-    width: 110px;
+  .cloud14 {
+    width: 50px;
     bottom: 25%;
     right: 15%;
-  }
-
-  .cloud14 {
-    width: 90px;
-    bottom: 20%;
-    right: 30%;
-  }
-
-  .cloud18 {
-    width: 80px;
-    bottom: 35%;
-    left: 20%;
   }
 }

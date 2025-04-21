@@ -24,6 +24,10 @@
     <a href="#experience" class="desktop-link">experience</a>
     <a href="#projects" class="desktop-link">projects</a>
     <a href="#handles" class="desktop-link">contact me!</a>
+    <a href="index/Resume_Leane_Ying.pdf" onclick="openAndDownload(event)" class="italic">
+      my resume
+    </a>
+
 
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
@@ -38,6 +42,12 @@
     <a href="#experience" onclick="toggleMenu()">experience</a>
     <a href="#projects" onclick="toggleMenu()">projects</a>
     <a href="#handles" onclick="toggleMenu()">contact me!</a>
+    <a href="index/resume.pdf" download onclick="toggleMenu()">my resume</a>
+    <a href="index/Resume_Leane_Ying.pdf" class="italic" onclick="toggleMenu(); openAndDownload(event)">
+      my resume
+    </a>
+
+
   </div>
 
   <!-- Cloud container -->
@@ -148,9 +158,12 @@
                   University↗</a></em></strong></p>
           <p>Current junior majoring in computer science in the College of Engineering.</p>
           <div class="skills">
-            <span class="skill-pill">C++</span>
-            <span class="skill-pill">Python</span>
             <span class="skill-pill">Java</span>
+            <span class="skill-pill">Matlab</span>
+            <span class="skill-pill">OCaml</span>
+            <span class="skill-pill">C/C#</span>
+            <span class="skill-pill">RISC-V Assembly</span>
+            <span class="skill-pill">Docker</span>
           </div>
         </div>
       </div>
@@ -179,13 +192,17 @@
         <div class="experience-right">
           <p><strong>Backend Software Engineer Intern @ <em><a href="https://bumpups.com/" target="_blank">Bumpups↗
                 </a></em></strong></p>
-          <p>Integrated AI APIs to optimize video processing. Implemented pre-processing to shorten transcripts by 50%
-            for AI models. Participated in full SDLC.</p>
+          <p>Integrated AI APIs to optimize video processing for image and text. Implemented pre-processing techniques
+            to shorten transcripts by 50% to feed to AI models. Participated in the full SDLC, including design,
+            development, testing, deployment, and optimization. collaborated with cross-functional teams to ensure
+            seamless integration and alignment wit project objectives.</p>
           <div class="skills">
             <span class="skill-pill">Python</span>
             <span class="skill-pill">Firebase</span>
-            <span class="skill-pill">AI</span>
+            <span class="skill-pill">Jira</span>
+            <span class="skill-pill">NLTK</span>
             <span class="skill-pill">Video Processing</span>
+            <span class="skill-pill">Gemini</span>
           </div>
         </div>
       </div>
@@ -198,12 +215,13 @@
         <div class="experience-right">
           <p><strong>Teaching Assistant @ <em><a href="https://www.cs.cornell.edu/" target="_blank">Cornell Bowers
                   CIS↗</a></em></strong></p>
-          <p>Hosted discussion sections and office hours for CS1112. Taught problem-solving and algorithmic thinking
-            using Python.</p>
+          <p>Worked for CS1112: Introduction to Computing: An Engineering and Science Perspective. Hosted weekly
+            discussion sections and conducted weekly office hours. Taught problem-solving in Python through the
+            systematic development of algorithms.</p>
           <div class="skills">
             <span class="skill-pill">Python</span>
-            <span class="skill-pill">Teaching</span>
-            <span class="skill-pill">Debugging</span>
+            <span class="skill-pill">NumPy</span>
+            <span class="skill-pill">Pandas</span>
           </div>
         </div>
       </div>
@@ -214,15 +232,23 @@
         </div>
         <div class="experience-divider"></div>
         <div class="experience-right">
-          <p><strong>Software Developer @ <em><a href="https://www.hack4impact.org/"
+          <p><strong>Software Developer @ <em><a href="https://www.cornellh4i.org/"
                   target="_blank">Hack4Impact↗</a></em></strong></p>
-          <p>Collaborated with teams to develop web applications for non-profit organizations focused on social good.
-            Worked with developers, designers, and PMs to build scalable web tools.</p>
+          <p> Collaborated with teams to develop web applications for non-profit organizations to help automate and
+            expedite current code bases aimed at social good. Worked closely with cross-functional teams including
+            developers, designers, and product managers to implement and advocate for best practices in web
+            development, and build scalable web tools.</p>
           <div class="skills">
+            <span class="skill-pill">Javascript/Typescript</span>
+            <span class="skill-pill">HTML/CSS</span>
+            <span class="skill-pill">Github</span>
             <span class="skill-pill">React</span>
             <span class="skill-pill">Node.js</span>
             <span class="skill-pill">MongoDB</span>
-            <span class="skill-pill">Full Stack</span>
+            <span class="skill-pill">Vercel</span>
+            <span class="skill-pill">Prisma</span>
+            <span class="skill-pill">Redis</span>
+            <span class="skill-pill">SCRUM</span>
           </div>
         </div>
       </div>
@@ -311,6 +337,23 @@
       if (mobileHeader) mobileHeader.textContent = "home";
       handleCloudVisibility();
     });
+
+    function openAndDownload(event) {
+      event.preventDefault();
+      const url = event.currentTarget.getAttribute('href');
+
+      // Open in new tab
+      window.open(url, '_blank');
+
+      // Trigger download
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Resume_Leane_Ying.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
   </script>
 </body>
 

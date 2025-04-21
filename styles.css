@@ -64,6 +64,10 @@ nav a:hover::after {
   transform-origin: left;
 }
 
+.italic {
+  font-style: italic;
+}
+
 nav a.active {
   color: #ff6a80;
   font-weight: bold;
@@ -565,7 +569,6 @@ section p {
   text-align: right;
   transform: translateY(3.5px);
   white-space: nowrap;
-  /* Keep the dates in one line */
 }
 
 .experience-divider {
@@ -574,7 +577,6 @@ section p {
   height: 100%;
   position: absolute;
   left: calc(20% + 1rem);
-  /* Center the divider between columns */
   transform: translateX(-50%);
 }
 
@@ -616,36 +618,26 @@ section p {
 @media (max-width: 768px) {
   .experience-entry {
     flex-direction: column;
-    /* Stack the content vertically on small screens */
   }
 
   .experience-left {
     flex-basis: 100%;
-    /* Full width on smaller screens */
     padding-right: 0;
-    /* Remove right padding */
     justify-content: flex-start;
-    /* Align dates to the left */
     margin-bottom: 10px;
-    /* Add space between dates and experience content */
   }
 
   .experience-date {
     font-size: 0.85rem;
-    /* Adjust the font size on smaller screens */
     text-align: left;
-    /* Align dates to the left */
     transform: none;
-    /* Remove transform for better readability */
   }
 
   .experience-divider {
     display: none;
-    /* Hide the divider on small screens */
   }
 
   .experience-right {
     flex-basis: 100%;
-    /* Allow right side content to take full width */
   }
 }

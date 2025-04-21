@@ -597,7 +597,7 @@ section p {
 }
 
 .experience-right {
-  flex-basis: 80%;
+  flex-basis: 70%;
   padding-left: 2rem;
 }
 
@@ -664,6 +664,7 @@ section p {
   display: flex;
   justify-content: center;
   margin-top: 25px;
+  overflow: hidden;
 }
 
 .experience-container {
@@ -677,16 +678,15 @@ section p {
   position: absolute;
   top: 40px;
   width: 550px;
-  /* Larger polaroid size */
   z-index: 1;
 }
 
 .polaroid-left {
-  left: -490px;
+  left: -460px;
 }
 
 .polaroid-right {
-  right: -490px;
+  right: -460px;
 }
 
 @media screen and (min-width: 992px) {

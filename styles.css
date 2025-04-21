@@ -553,19 +553,25 @@ section p {
   background-color: transparent;
 }
 
+.experience-layout {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  overflow-x: visible;
+}
+
 .experience-container {
+  width: 90%;
+  max-width: 1050px;
+  padding: 30px 20px 20px;
   border: 2px solid #FFB6C1;
   border-radius: 12px;
-  padding: 20px;
-  /* Padding on all sides */
   background-color: transparent;
-  width: 90%;
-  /* Reduced width to make the box smaller */
-  max-width: 1050px;
-  /* Optional: Set a maximum width to prevent box from becoming too wide */
   box-sizing: border-box;
-  margin-top: 25px;
   position: relative;
+  z-index: 2;
 }
 
 .experience-entry {
@@ -597,7 +603,7 @@ section p {
   background-color: #ff6a80;
   height: 100%;
   position: absolute;
-  left: calc(20% + 2.5rem);
+  left: calc(20% + 2.9rem);
   transform: translateX(-50%);
 }
 
@@ -636,59 +642,6 @@ section p {
   font-weight: 500;
 }
 
-@media (max-width: 800px) {
-  .experience-entry {
-    flex-direction: column;
-  }
-
-  .experience-left {
-    flex-basis: 100%;
-    padding-right: 0;
-    justify-content: flex-start;
-    margin-bottom: 10px;
-  }
-
-  .experience-date {
-    font-size: 0.95rem;
-    text-align: left;
-    transform: none;
-    padding-left: 0;
-  }
-
-  .experience-divider {
-    display: none;
-  }
-
-  .experience-right {
-    flex-basis: 100%;
-    font-size: 0.95rem;
-  }
-}
-
-.experience-layout {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-  overflow-x: visible;
-}
-
-.experience-container {
-  width: 90%;
-  /* Reduced width */
-  max-width: 1050px;
-  /* Keeps a max width */
-  z-index: 2;
-  position: relative;
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  /* Keeps padding uniform */
-  box-sizing: border-box;
-}
-
 .polaroid {
   display: none;
   position: absolute;
@@ -707,17 +660,75 @@ section p {
   right: -405px;
 }
 
-@media screen and (min-width: 992px) {
+/* Responsive */
+@media (max-width: 800px) {
+  .experience-entry {
+    flex-direction: column;
+  }
+
+  .experience-left {
+    flex-basis: 100%;
+    padding-right: 0;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .experience-date {
+    font-size: 0.95rem;
+    text-align: left;
+    transform: none;
+  }
+
+  .experience-divider {
+    display: none;
+  }
+
+  .experience-right {
+    flex-basis: 100%;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 1000px) {
   .polaroid {
     display: block;
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 1300px) and (max-width: 1500px) {
+
   .polaroid {
-    display: none;
+    display: block;
+    width: 400px;
+    top: 30px;
+  }
+
+  .polaroid-left {
+    left: -280px;
+  }
+
+  .polaroid-right {
+    right: -285px;
   }
 }
+
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+
+  .polaroid {
+    display: block;
+    width: 340px;
+    top: 30px;
+  }
+
+  .polaroid-left {
+    left: -230px;
+  }
+
+  .polaroid-right {
+    right: -235px;
+  }
+}
+
 
 /* Projects Grid */
 .projects-grid {

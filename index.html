@@ -253,13 +253,58 @@
     </div>
   </section>
 
-
   <!-- Projects -->
   <section id="projects">
     <div class="heading">
       <p>projects</p>
     </div>
-    <p>#todo</p>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card" data-project-id="project1">
+        <div class="project-image">
+          <img src="projects/project1.png" alt="Project 1">
+        </div>
+        <div class="project-info">
+          <h3>Personal Website</h3>
+          <p>A responsive personal website built with HTML, CSS, and JavaScript.</p>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card" data-project-id="project2">
+        <div class="project-image">
+          <img src="projects/project2.png" alt="Project 2">
+        </div>
+        <div class="project-info">
+          <h3>Nonprofit Dashboard</h3>
+          <p>Full-stack application for nonprofits to track donations and engagement.</p>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card" data-project-id="project3">
+        <div class="project-image">
+          <img src="projects/project3.png" alt="Project 3">
+        </div>
+        <div class="project-info">
+          <h3>AI Video Processing</h3>
+          <p>Backend system for processing video content with AI models.</p>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card" data-project-id="project4">
+        <div class="project-image">
+          <img src="projects/project4.png" alt="Project 4">
+        </div>
+        <div class="project-info">
+          <h3>Social Media Analyzer</h3>
+          <p>Tool to analyze social media engagement and content performance.</p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- Contact -->
@@ -279,6 +324,129 @@
       </a>
     </div>
   </section>
+
+  <!-- Project Modals -->
+  <!-- Project 1 Modal -->
+  <div id="project1" class="project-modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeProjectModal('project1')">&times;</span>
+      <div class="modal-header">
+        <h2>Personal Website</h2>
+        <div class="modal-links">
+          <a href="https://github.com/leaneying/personal-website" target="_blank" class="modal-link">
+            <img src="index/github.png" alt="GitHub" class="modal-icon"> GitHub
+          </a>
+          <a href="#" target="_blank" class="modal-link">
+            <img src="index/link.png" alt="Live Demo" class="modal-icon"> Live Demo
+          </a>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="projects/project1-large.png" alt="Personal Website">
+        </div>
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>Project description text here...</p>
+
+          <div class="project-meta">
+            <div class="meta-item">
+              <strong>Date:</strong> <span>January 2024 - April 2024</span>
+            </div>
+            <div class="meta-item">
+              <strong>Company/Organization:</strong> <span>Hack4Impact</span>
+            </div>
+          </div>
+
+          <h3>Technologies Used</h3>
+          <div class="skills">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Responsive Design</span>
+          </div>
+          <br>
+          <h3>Key Features</h3>
+          <ul>
+            <li>Responsive layout that works on mobile and desktop</li>
+            <li>Interactive cloud animations</li>
+            <li>Terminal-style about section</li>
+            <li>Project showcase with modal popups</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2 Modal -->
+  <div id="project2" class="project-modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeProjectModal('project2')">&times;</span>
+      <div class="modal-header">
+        <h2>Nonprofit Dashboard</h2>
+        <div class="modal-links">
+          <a href="https://github.com/hack4impact/nonprofit-dashboard" target="_blank" class="modal-link">
+            <img src="index/github.png" alt="GitHub" class="modal-icon"> GitHub
+          </a>
+          <a href="#" target="_blank" class="modal-link">
+            <img src="index/link.png" alt="Live Demo" class="modal-icon"> Live Demo
+          </a>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="projects/project2-large.png" alt="Nonprofit Dashboard">
+        </div>
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>Project description text here...</p>
+
+          <div class="project-meta">
+            <div class="meta-item">
+              <strong>Date:</strong> <span>January 2024 - April 2024</span>
+            </div>
+            <div class="meta-item">
+              <strong>Company/Organization:</strong> <span>Hack4Impact</span>
+            </div>
+          </div>
+
+          <h3>Technologies Used</h3>
+          <div class="skills">
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">MongoDB</span>
+            <span class="skill-pill">Prisma</span>
+            <span class="skill-pill">Vercel</span>
+          </div>
+          <br>
+          <h3>Key Features</h3>
+          <ul>
+            <li>User authentication and role-based access</li>
+            <li>Dashboard with real-time analytics</li>
+            <li>Donor management system</li>
+            <li>Event tracking and volunteer coordination</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add modals for Project 3 and Project 4 following the same pattern -->
+  <!-- Project 3 Modal -->
+  <div id="project3" class="project-modal">
+    <!-- Project 3 modal content -->
+    <div class="modal-content">
+      <!-- Similar structure to projects 1 and 2 -->
+    </div>
+  </div>
+
+  <!-- Project 4 Modal -->
+  <div id="project4" class="project-modal">
+    <!-- Project 4 modal content -->
+    <div class="modal-content">
+      <!-- Similar structure to projects 1 and 2 -->
+    </div>
+  </div>
 
   <script>
     function toggleMenu() {
@@ -353,6 +521,63 @@
       document.body.removeChild(a);
     }
 
+    // Project modal functions
+    function openProjectModal(projectId, event) {
+      const modal = document.getElementById(projectId);
+      modal.style.display = 'block';
+      setTimeout(() => {
+        modal.style.opacity = '1';
+      }, 10);
+      document.body.style.overflow = 'hidden';
+
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+
+    // Update the project card onclick to pass the event
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', function (event) {
+        const projectId = this.getAttribute('data-project-id');
+        openProjectModal(projectId, event);
+
+        // Prevent default behavior and stop event propagation
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      });
+    });
+
+    function closeProjectModal(projectId) {
+      const modal = document.getElementById(projectId);
+      modal.style.opacity = '0';
+      setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+      }, 300);
+    }
+
+    // Close modal when clicking outside of content
+    window.addEventListener('click', function (event) {
+      document.querySelectorAll('.project-modal').forEach(modal => {
+        if (event.target === modal) {
+          const projectId = modal.getAttribute('id');
+          closeProjectModal(projectId);
+        }
+      });
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        document.querySelectorAll('.project-modal').forEach(modal => {
+          if (modal.style.display === 'block') {
+            const projectId = modal.getAttribute('id');
+            closeProjectModal(projectId);
+          }
+        });
+      }
+    });
   </script>
 </body>
 

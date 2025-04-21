@@ -622,7 +622,7 @@ section p {
 }
 
 .skills {
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -716,5 +716,263 @@ section p {
 @media screen and (max-width: 991px) {
   .polaroid {
     display: none;
+  }
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Change from auto-fill to exactly 3 columns */
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Adjust responsive behavior */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 1.5rem;
+}
+
+.project-info h3 {
+  color: #FF6A80;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.project-info p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Project Modal */
+.project-modal {
+  display: none;
+  position: fixed;
+  /* crucial! */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  overflow-y: auto;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background-color: #fcfbf4;
+  margin: 50vh auto;
+  transform: translateY(-50%);
+  width: 85%;
+  max-width: 1200px;
+  border-radius: 20px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: modalFadeIn 0.5s;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #FF6A80;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 1;
+  /* Add these properties */
+  background-color: rgba(252, 251, 244, 0.8);
+  /* Match background with slight transparency */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.close-modal:hover {
+  color: #ff3352;
+}
+
+.modal-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 4rem;
+}
+
+.modal-header h2 {
+  color: #FF6A80;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.modal-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.modal-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #333;
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.modal-link:hover {
+  background-color: #FFB6C1;
+  color: white;
+}
+
+.modal-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.modal-body {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.modal-image {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.modal-description h3 {
+  color: #FF6A80;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.modal-description p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.modal-description ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-description li {
+  margin-bottom: 0.5rem;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-50% - 30px));
+    /* Adjust for the transform */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+    /* Match the transform property */
+  }
+}
+
+.project-meta {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.meta-item {
+  margin-bottom: 0.3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 10vh auto;
+  }
+
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .modal-links {
+    width: 100%;
+    justify-content: space-between;
   }
 }

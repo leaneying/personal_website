@@ -694,3 +694,15 @@ section p {
     display: block;
   }
 }
+
+@media screen and (min-width: 992px) {
+  .polaroid {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .polaroid {
+    display: none;
+  }
+}

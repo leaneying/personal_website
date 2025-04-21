@@ -1,10 +1,26 @@
 /* styles.css */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* Prevent scrollbars if polaroids extend off-screen */
+}
+
+#experience {
+  position: relative;
+  width: 100vw;
+  /* Full viewport width */
+  padding: 0;
+}
+
 
 /* Z-index layers */
 :root {
@@ -639,5 +655,42 @@ section p {
 
   .experience-right {
     flex-basis: 100%;
+  }
+}
+
+.experience-layout {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.experience-container {
+  max-width: 900px;
+  width: 100%;
+  z-index: 2;
+}
+
+.polaroid {
+  display: none;
+  position: absolute;
+  top: 40px;
+  width: 550px;
+  /* Larger polaroid size */
+  z-index: 1;
+}
+
+.polaroid-left {
+  left: -490px;
+}
+
+.polaroid-right {
+  right: -490px;
+}
+
+@media screen and (min-width: 992px) {
+  .polaroid {
+    display: block;
   }
 }

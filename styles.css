@@ -557,10 +557,15 @@ section p {
   border: 2px solid #FFB6C1;
   border-radius: 12px;
   padding: 20px;
+  /* Padding on all sides */
   background-color: transparent;
-  width: 100%;
+  width: 90%;
+  /* Reduced width to make the box smaller */
+  max-width: 1050px;
+  /* Optional: Set a maximum width to prevent box from becoming too wide */
   box-sizing: border-box;
   margin-top: 25px;
+  position: relative;
 }
 
 .experience-entry {
@@ -598,6 +603,7 @@ section p {
 
 .experience-right {
   flex-basis: 70%;
+  /* Adjusted if necessary */
   padding-left: 2rem;
 }
 
@@ -664,35 +670,40 @@ section p {
   display: flex;
   justify-content: center;
   margin-top: 25px;
-  overflow: hidden;
+  overflow-x: visible;
 }
 
 .experience-container {
-  max-width: 900px;
-  width: 100%;
+  width: 90%;
+  /* Reduced width */
+  max-width: 1050px;
+  /* Keeps a max width */
   z-index: 2;
+  position: relative;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  /* Keeps padding uniform */
+  box-sizing: border-box;
 }
 
 .polaroid {
   display: none;
   position: absolute;
   top: 40px;
-  width: 550px;
+  width: 525px;
   z-index: 1;
+  padding: 0;
+  transition: all 0.3s ease;
 }
 
 .polaroid-left {
-  left: -460px;
+  left: -395px;
 }
 
 .polaroid-right {
-  right: -460px;
-}
-
-@media screen and (min-width: 992px) {
-  .polaroid {
-    display: block;
-  }
+  right: -402px;
 }
 
 @media screen and (min-width: 992px) {

@@ -8,8 +8,6 @@
 
   <link rel="stylesheet" href="clouds/clouds.css">
   <link rel="stylesheet" href="styles.css" />
-
-
 </head>
 
 <body>
@@ -24,10 +22,9 @@
     <a href="#experience" class="desktop-link">experience</a>
     <a href="#projects" class="desktop-link">projects</a>
     <a href="#handles" class="desktop-link">contact me!</a>
-    <a href="index/Resume_Leane_Ying.pdf" onclick="openAndDownload(event)" class="italic">
+    <a href="index/Resume_Leane_Ying.pdf" onclick="openAndDownload(event)" class="desktop-link italic">
       my resume
     </a>
-
 
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
@@ -42,12 +39,9 @@
     <a href="#experience" onclick="toggleMenu()">experience</a>
     <a href="#projects" onclick="toggleMenu()">projects</a>
     <a href="#handles" onclick="toggleMenu()">contact me!</a>
-    <a href="index/resume.pdf" download onclick="toggleMenu()">my resume</a>
     <a href="index/Resume_Leane_Ying.pdf" class="italic" onclick="toggleMenu(); openAndDownload(event)">
       my resume
     </a>
-
-
   </div>
 
   <!-- Cloud container -->
@@ -306,7 +300,7 @@
 
     window.addEventListener("scroll", () => {
       const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("nav a");
+      const navLinks = document.querySelectorAll("nav a.desktop-link");
       let current = "home";
 
       sections.forEach((section) => {
@@ -324,9 +318,10 @@
         }
       });
 
+      // Format the section ID for display (replace hyphens with spaces)
       const mobileHeader = document.getElementById("mobileHeader");
       if (mobileHeader) {
-        mobileHeader.textContent = current;
+        mobileHeader.textContent = current.replace(/-/g, ' ');
       }
 
       handleCloudVisibility();
@@ -353,7 +348,6 @@
       a.click();
       document.body.removeChild(a);
     }
-
   </script>
 </body>
 

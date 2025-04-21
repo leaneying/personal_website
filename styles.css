@@ -576,7 +576,7 @@ section p {
 }
 
 .experience-left {
-  flex-basis: 20%;
+  flex-basis: 25%;
   padding-right: 1rem;
   display: flex;
   align-items: flex-start;
@@ -597,12 +597,12 @@ section p {
   background-color: #ff6a80;
   height: 100%;
   position: absolute;
-  left: calc(20% + 1rem);
+  left: calc(20% + 2.5rem);
   transform: translateX(-50%);
 }
 
 .experience-right {
-  flex-basis: 70%;
+  flex-basis: 68%;
   /* Adjusted if necessary */
   padding-left: 2rem;
 }
@@ -653,6 +653,7 @@ section p {
     font-size: 0.85rem;
     text-align: left;
     transform: none;
+    padding-left: 0;
   }
 
   .experience-divider {
@@ -694,17 +695,17 @@ section p {
   position: absolute;
   top: 40px;
   width: 525px;
-  z-index: 1;
+  z-index: 5;
   padding: 0;
   transition: all 0.3s ease;
 }
 
 .polaroid-left {
-  left: -395px;
+  left: -398px;
 }
 
 .polaroid-right {
-  right: -402px;
+  right: -405px;
 }
 
 @media screen and (min-width: 992px) {

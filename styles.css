@@ -527,3 +527,125 @@ section p {
     margin-top: 0.5rem;
   }
 }
+
+#experience {
+  padding: 5rem 1rem;
+  background-color: transparent;
+}
+
+.experience-container {
+  border: 2px solid #FFB6C1;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 25px;
+}
+
+.experience-entry {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.experience-left {
+  flex-basis: 20%;
+  padding-right: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  line-height: 1.2;
+}
+
+.experience-date {
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-align: right;
+  transform: translateY(3.5px);
+  white-space: nowrap;
+  /* Keep the dates in one line */
+}
+
+.experience-divider {
+  width: 1px;
+  background-color: #ff6a80;
+  height: 100%;
+  position: absolute;
+  left: calc(20% + 1rem);
+  /* Center the divider between columns */
+  transform: translateX(-50%);
+}
+
+.experience-right {
+  flex-basis: 80%;
+  padding-left: 2rem;
+}
+
+.experience-right p:first-child {
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.experience-right p a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.experience-right p a:hover {
+  text-decoration: underline;
+}
+
+.skills {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  background-color: #ff6a80;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .experience-entry {
+    flex-direction: column;
+    /* Stack the content vertically on small screens */
+  }
+
+  .experience-left {
+    flex-basis: 100%;
+    /* Full width on smaller screens */
+    padding-right: 0;
+    /* Remove right padding */
+    justify-content: flex-start;
+    /* Align dates to the left */
+    margin-bottom: 10px;
+    /* Add space between dates and experience content */
+  }
+
+  .experience-date {
+    font-size: 0.85rem;
+    /* Adjust the font size on smaller screens */
+    text-align: left;
+    /* Align dates to the left */
+    transform: none;
+    /* Remove transform for better readability */
+  }
+
+  .experience-divider {
+    display: none;
+    /* Hide the divider on small screens */
+  }
+
+  .experience-right {
+    flex-basis: 100%;
+    /* Allow right side content to take full width */
+  }
+}

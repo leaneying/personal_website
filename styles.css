@@ -637,7 +637,7 @@ section p {
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .experience-entry {
     flex-direction: column;
   }
@@ -661,6 +661,7 @@ section p {
 
   .experience-right {
     flex-basis: 100%;
+    font-size: 0.85rem;
   }
 }
 

@@ -731,15 +731,25 @@ section p {
 
 
 /* Projects Grid */
+.projects-container {
+  background-image: url('index/pink_background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 3rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* Change from auto-fill to exactly 3 columns */
   gap: 2rem;
-  margin-top: 3rem;
 }
 
-/* Adjust responsive behavior */
 @media (max-width: 992px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -756,14 +766,14 @@ section p {
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
 }
 
 .project-image {

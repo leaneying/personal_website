@@ -908,7 +908,6 @@ section p {
   border-radius: 30px;
   transition: all 0.3s;
   font-size: 1rem;
-  /* Default size */
 }
 
 .modal-link:hover {
@@ -918,8 +917,7 @@ section p {
 
 @media (max-width: 600px) {
   .modal-link {
-    font-size: 0.875rem;
-    /* Smaller font size on mobile */
+    font-size: 0.8rem;
   }
 }
 
@@ -1009,7 +1007,7 @@ section p {
   }
 
   .modal-links {
-    width: 100%;
+    width: 80%;
     justify-content: space-between;
   }
 }

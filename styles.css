@@ -915,13 +915,6 @@ section p {
   color: white;
 }
 
-@media (max-width: 600px) {
-  .modal-link {
-    font-size: 0.8rem;
-  }
-}
-
-
 .modal-icon {
   width: 20px;
   height: 20px;
@@ -1007,7 +1000,8 @@ section p {
   }
 
   .modal-links {
-    width: 80%;
+    font-size: 0.7rem;
+    width: 70%;
     justify-content: space-between;
   }
 }

@@ -362,156 +362,6 @@
     </div>
   </section>
 
-  <!-- Project Modals -->
-  <!-- Project 1 Modal -->
-  <div id="project1" class="project-modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeProjectModal('project1')">&times;</span>
-      <div class="modal-header">
-        <h2>Ithaca Community Recovery</h2>
-        <div class="modal-links">
-          <a href="https://ithaca-recovery-deployment.vercel.app" target="_blank" class="modal-link">
-            <img src="index/link.png" alt="Live Demo" class="modal-icon"> Live Demo
-          </a>
-
-          <a href="https://medium.com/cornellh4i/ithaca-community-recovery-streamlining-management-of-rental-spaces-for-recovery-oriented-meetings-3d263f53f49b"
-            target="_blank" class="modal-link">
-            <img src="index/pen.png" alt="Article" class="modal-icon"> Article
-          </a>
-
-          <a href="#" target="_blank" class="modal-link">
-            <img src="index/showcase.png" alt="Showcase" class="modal-icon"> Showcase
-          </a>
-        </div>
-      </div>
-      <div class="modal-body">
-        <div class="modal-images-column">
-          <div class="modal-image">
-            <img src="projects/recovery.png" style="aspect-ratio: 4 / 2;">
-          </div>
-          <div class="modal-image">
-            <img src="projects/recovery2.png" style="aspect-ratio: 4 / 2;">
-          </div>
-        </div>
-        <div class="modal-description">
-          <h3>Description</h3>
-          <p>Ithaca Community Recovery (ICR) is a non-profit dedicated to supporting individuals in addiction recovery
-            through 12-Step and related programs. This project focuses on building internal tools to simplify and
-            automate ICR’s event and meeting management workflows, enabling smoother scheduling and access for community
-            members.
-          </p>
-
-          <div class="project-meta">
-            <div class="meta-item">
-              <strong>Date:</strong> <span>August 2024 - May 2025</span>
-            </div>
-            <div class="meta-item">
-              <strong>Company/Organization:</strong> <span>Hack4Impact</span>
-            </div>
-            <div class="meta-item">
-              <strong>Role:</strong> <span>Full-stack developer</span>
-            </div>
-          </div>
-
-          <h3>Technologies Used</h3>
-          <div class="skills">
-            <span class="skill-pill">JavaScript/TypeScript</span>
-            <span class="skill-pill">React</span>
-            <span class="skill-pill">Figma</span>
-            <span class="skill-pill">GitHub</span>
-            <span class="skill-pill">Next.js</span>
-            <span class="skill-pill">MongoDB</span>
-            <span class="skill-pill">Prisma</span>
-            <span class="skill-pill">MSAL</span>
-            <span class="skill-pill">Vercel</span>
-          </div>
-          <br>
-          <h3>Key Features</h3>
-          <ul>
-            <li>Interactive daily and weekly calendar views</li>
-            <li>Advanced filtering for meetings and events</li>
-            <li>Custom recurring meeting functionality</li>
-            <li>Full CRUD functionality for meetings, backed by MongoDB</li>
-            <li>Automatic Zoom link generation for asynchronous meetings</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project 2 Modal -->
-  <div id="project2" class="project-modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeProjectModal('project2')">&times;</span>
-      <div class="modal-header">
-        <h2>Nonprofit Dashboard</h2>
-        <div class="modal-links">
-          <a href="https://github.com/hack4impact/nonprofit-dashboard" target="_blank" class="modal-link">
-            <img src="index/github.png" alt="GitHub" class="modal-icon"> GitHub
-          </a>
-          <a href="#" target="_blank" class="modal-link">
-            <img src="index/link.png" alt="Live Demo" class="modal-icon"> Live Demo
-          </a>
-        </div>
-      </div>
-      <div class="modal-body">
-        <div class="modal-image">
-          <img src="projects/project2-large.png" alt="Nonprofit Dashboard">
-        </div>
-        <div class="modal-description">
-          <h3>Description</h3>
-          <p>Project description text here...</p>
-
-          <div class="project-meta">
-            <div class="meta-item">
-              <strong>Date:</strong> <span>January 2024 - April 2024</span>
-            </div>
-            <div class="meta-item">
-              <strong>Company/Organization:</strong> <span>Hack4Impact</span>
-            </div>
-            <div class="meta-item">
-              <strong>Role:</strong> <span>Full-Stack Developer</span>
-            </div>
-          </div>
-
-          <h3>Technologies Used</h3>
-          <div class="skills">
-            <span class="skill-pill">React</span>
-            <span class="skill-pill">Node.js</span>
-            <span class="skill-pill">MongoDB</span>
-            <span class="skill-pill">Prisma</span>
-            <span class="skill-pill">Vercel</span>
-          </div>
-          <br>
-          <h3>Key Features</h3>
-          <ul>
-            <li>User authentication and role-based access</li>
-            <li>Dashboard with real-time analytics</li>
-            <li>Donor management system</li>
-            <li>Event tracking and volunteer coordination</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Add modals for Project 3 and Project 4 following the same pattern -->
-  <!-- Project 3 Modal -->
-  <div id="project3" class="project-modal">
-    <!-- Project 3 modal content -->
-    <div class="modal-content">
-      <!-- Similar structure to projects 1 and 2 -->
-    </div>
-  </div>
-
-  <!-- Project 4 Modal -->
-  <div id="project4" class="project-modal">
-    <!-- Project 4 modal content -->
-    <div class="modal-content">
-      <!-- Similar structure to projects 1 and 2 -->
-    </div>
-  </div>
-
   <script>
     function toggleMenu() {
       const hamburger = document.querySelector('.hamburger');
@@ -642,6 +492,45 @@
         });
       }
     });
+
+    // Add this function to your existing JavaScript
+    document.addEventListener('DOMContentLoaded', function () {
+      // Create a container for modals if it doesn't exist
+      let modalContainer = document.getElementById('modal-container');
+      if (!modalContainer) {
+        modalContainer = document.createElement('div');
+        modalContainer.id = 'modal-container';
+        document.body.appendChild(modalContainer);
+      }
+
+      // Load all modal content
+      loadModals();
+    });
+
+    // Function to load all modals
+    function loadModals() {
+      // Get all project cards to determine which modals to load
+      const projectCards = document.querySelectorAll('.project-card');
+      const projectIds = Array.from(projectCards).map(card => card.getAttribute('data-project-id'));
+
+      // Load each modal
+      projectIds.forEach(projectId => {
+        fetch(`project_modals/${projectId}.html`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Failed to load modal: ${response.status}`);
+            }
+            return response.text();
+          })
+          .then(html => {
+            const modalContainer = document.getElementById('modal-container');
+            modalContainer.innerHTML += html;
+          })
+          .catch(error => {
+            console.error(`Error loading modal ${projectId}:`, error);
+          });
+      });
+    }
   </script>
 </body>
 

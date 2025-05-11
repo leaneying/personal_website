@@ -810,33 +810,46 @@ section p {
 
 /* Project Modal */
 .project-modal {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
   opacity: 0;
-  overflow-y: auto;
   transition: opacity 0.3s ease;
+  overflow-y: auto;
 }
 
 .modal-content {
   background-color: #fcfbf4;
-  margin: 20vh auto;
-  /* sit lower on the screen */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 95%;
   max-width: 1200px;
   border-radius: 20px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-  position: relative;
   animation: modalFadeIn 0.4s ease-out;
   max-height: 90vh;
   overflow-y: auto;
 }
 
+/* Updated animation to work with centered positioning */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    top: calc(50% + 20px);
+  }
+
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}
 
 .close-modal {
   position: sticky;
@@ -894,12 +907,22 @@ section p {
   padding: 0.5rem 1rem;
   border-radius: 30px;
   transition: all 0.3s;
+  font-size: 1rem;
+  /* Default size */
 }
 
 .modal-link:hover {
   background-color: #FFB6C1;
   color: white;
 }
+
+@media (max-width: 600px) {
+  .modal-link {
+    font-size: 0.875rem;
+    /* Smaller font size on mobile */
+  }
+}
+
 
 .modal-icon {
   width: 20px;
@@ -919,10 +942,8 @@ section p {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: inline-block;
   width: auto;
-  /* Let the container size to the image */
   height: auto;
 }
-
 
 .modal-image img {
   max-width: 100%;
@@ -956,18 +977,6 @@ section p {
   margin-bottom: 0.5rem;
 }
 
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .project-meta {
   margin-bottom: 1rem;
   font-size: 0.95rem;
@@ -991,7 +1000,6 @@ section p {
 
   .modal-content {
     width: 95%;
-    margin: 20px auto;
   }
 
   .modal-header {
@@ -1004,5 +1012,4 @@ section p {
     width: 100%;
     justify-content: space-between;
   }
-
 }

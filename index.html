@@ -415,10 +415,12 @@
     });
 
     window.addEventListener("load", () => {
+      window.scrollTo(0, 0); // <-- forces page to top
       const mobileHeader = document.getElementById("mobileHeader");
       if (mobileHeader) mobileHeader.textContent = "home";
       handleCloudVisibility();
     });
+
 
     function openAndDownload(event) {
       event.preventDefault();

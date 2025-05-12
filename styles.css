@@ -231,12 +231,36 @@ section p {
   gap: max(2vh, 32px);
 }
 
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  min-height: max(40vh, 500px);
+}
+
+.insta-image {
+  display: none;
+  height: auto;
+  width: 350px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .insta-image {
+    display: block;
+  }
+
+  .contact-container {
+    padding: 40px 0;
+  }
+}
+
 .icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: max(5vw, 100px);
-  height: max(40vh, 20px);
 }
 
 .icon-container a {
@@ -1007,4 +1031,18 @@ section p {
     gap: 0.5rem;
     align-items: flex-start;
   }
+}
+
+.footer {
+  padding: 15px 0;
+  text-align: center;
+  background-color: #FF9DAB;
+  width: 100%;
+}
+
+.copyright {
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
 }

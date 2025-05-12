@@ -364,6 +364,16 @@
   </section>
 
   <script>
+    window.addEventListener('beforeunload', () => {
+      sessionStorage.setItem('scrollY', window.scrollY);
+    });
+    window.addEventListener('load', () => {
+      const savedScroll = sessionStorage.getItem('scrollY');
+      if (savedScroll !== null) {
+        window.scrollTo(0, parseInt(savedScroll, 10));
+      }
+    });
+
     function toggleMenu() {
       const hamburger = document.querySelector('.hamburger');
       const menu = document.getElementById('mobileMenu');
@@ -415,7 +425,6 @@
     });
 
     window.addEventListener("load", () => {
-      window.scrollTo(0, 0); // <-- forces page to top
       const mobileHeader = document.getElementById("mobileHeader");
       if (mobileHeader) mobileHeader.textContent = "home";
       handleCloudVisibility();
